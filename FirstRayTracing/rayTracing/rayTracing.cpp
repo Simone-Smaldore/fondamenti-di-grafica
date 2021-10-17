@@ -1,9 +1,11 @@
 #include <iostream>
 #include <list>
+#include <ctime>
 #include "rayTracing.h"
 #include "SDL.h"
 #include "../utilitySDL/utilitySDL.h"
 #include "../model/Sphere.h"
+#include "../model/camera.h"
 
 using namespace std;
 
@@ -11,50 +13,45 @@ void showRayTracing() {
 
     SDL_Window* window;
     SDL_Renderer* renderer;
+    camera cam;
 
-    int const image_width = 1200;
-    int const image_height = 600;
+    int const image_width = 800;
+    int const image_height = 400;
+
+    time_t start_time = time(NULL);
 
     if (init(window, renderer, image_width, image_height) == 1) {
         cout << "Gradient Error! " << std::endl;
         return;
     }
-    float left = -2.0;
-    float right = 2.0;
-    float bottom = -1.0;
-    float top = 1.0;
-    float d = 1.0;
-    //ORIGINE
-    point3d o(0.0, 0.0, 0.0);
-    //VERSORI
-    vec3 un(1.0, 0.0, 0.0);
-    vec3 vn(0.0, 1.0, 0.0);
-    vec3 wn(0.0, 0.0, 1.0);
-    float horizontal = right - left;
-    float vertical = top - bottom;
 
     Object *list[2];
-
     list[0] = new Sphere(point3d(0.0f, 0.0f, -2.0f), 1.0);
-    list[1] = new Sphere(point3d(1.0f, -4.0f, -8.0f), 2.0);
+    list[1] = new Sphere(point3d(0.0f, -4.0f, -8.0f), 2.0);
     list[0] -> color = vec3(1.0,0.0,0.0);
     list[1] -> color = vec3(0.0,0.0,1.0);
     object_list *scene = new object_list(list, 2);
 
+    vec3 startBackgroundColor(1.0f, 1.0f, 1.0f);
+    vec3 endBackgroundColor(0.5f, 0.7f, 1.0f);
+
+    int ns = 256;
 
     for (int j = 0; j < image_height; j++) {
         for (int i = 0; i < image_width; i++) {
-            float u = left + (float(i + 0.5)  * horizontal / float(image_width));
-            float v = bottom + (float(j + 0.5) * vertical / float(image_height));
-            ray r(o, -d*wn + u*un + v*vn);
-            vec3 startColor(1.0f, 1.0f, 1.0f);
-            vec3 endColor(0.5f, 0.7f, 1.0f);
-            vec3 color = getColor(scene, r, startColor, endColor);
+            vec3 color(0.0, 0.0, 0.0);
+            for (int s = 0; s < ns; s++) {
+                ray r = cam.get_ray(float((i + randZeroToOne()) / image_width), float((j + randZeroToOne()) / image_height));
+                color += getColor(scene, r, startBackgroundColor, endBackgroundColor);;
+            }
+            color = color / float(ns);
             setColor(renderer, color.x, color.y, color.z);
             setPixel(renderer, i, j, image_height);
         }
     }
 
+    time_t current_time = time(NULL);
+    cout << "Impiegati " << current_time - start_time << " secondi per il rendering";
     update(renderer);
     close(renderer, window);
 }
@@ -66,5 +63,9 @@ vec3 getColor(object_list* scene, ray &r, vec3 &startColor, vec3 &endColor, floa
     } else {
         return colorLerpY(r, startColor, endColor);
     }
+}
+
+float randZeroToOne() {
+    return ((float) rand()) / (float) RAND_MAX;
 }
 

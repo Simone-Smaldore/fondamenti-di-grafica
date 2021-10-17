@@ -18,6 +18,10 @@ Object.h
 ../utilitySDL/utilitySDLInline.h
 /Users/Simone/Desktop/Universita/Fondamenti Di Grafica/ProgettiGitHub/FirstRayTracing/utilitySDL/utilitySDLInline.h
 
+/Users/Simone/Desktop/Universita/Fondamenti Di Grafica/ProgettiGitHub/FirstRayTracing/model/camera.h
+../utilitySDL/utilitySDLInline.h
+/Users/Simone/Desktop/Universita/Fondamenti Di Grafica/ProgettiGitHub/FirstRayTracing/utilitySDL/utilitySDLInline.h
+
 /Users/Simone/Desktop/Universita/Fondamenti Di Grafica/ProgettiGitHub/FirstRayTracing/model/object_list.h
 Object.h
 /Users/Simone/Desktop/Universita/Fondamenti Di Grafica/ProgettiGitHub/FirstRayTracing/model/Object.h
@@ -27,6 +31,8 @@ iostream
 -
 list
 -
+ctime
+-
 rayTracing.h
 /Users/Simone/Desktop/Universita/Fondamenti Di Grafica/ProgettiGitHub/FirstRayTracing/rayTracing/rayTracing.h
 SDL.h
@@ -35,6 +41,8 @@ SDL.h
 /Users/Simone/Desktop/Universita/Fondamenti Di Grafica/ProgettiGitHub/FirstRayTracing/utilitySDL/utilitySDL.h
 ../model/Sphere.h
 /Users/Simone/Desktop/Universita/Fondamenti Di Grafica/ProgettiGitHub/FirstRayTracing/model/Sphere.h
+../model/camera.h
+/Users/Simone/Desktop/Universita/Fondamenti Di Grafica/ProgettiGitHub/FirstRayTracing/model/camera.h
 
 /Users/Simone/Desktop/Universita/Fondamenti Di Grafica/ProgettiGitHub/FirstRayTracing/rayTracing/rayTracing.h
 ../utilitySDL/utilitySDLInline.h

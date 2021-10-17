@@ -225,6 +225,30 @@ model/Sphere.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/FirstRayTracing.dir/build.make CMakeFiles/FirstRayTracing.dir/model/Sphere.cpp.s
 .PHONY : model/Sphere.cpp.s
 
+model/camera.o: model/camera.cpp.o
+.PHONY : model/camera.o
+
+# target to build an object file
+model/camera.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FirstRayTracing.dir/build.make CMakeFiles/FirstRayTracing.dir/model/camera.cpp.o
+.PHONY : model/camera.cpp.o
+
+model/camera.i: model/camera.cpp.i
+.PHONY : model/camera.i
+
+# target to preprocess a source file
+model/camera.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FirstRayTracing.dir/build.make CMakeFiles/FirstRayTracing.dir/model/camera.cpp.i
+.PHONY : model/camera.cpp.i
+
+model/camera.s: model/camera.cpp.s
+.PHONY : model/camera.s
+
+# target to generate assembly for a file
+model/camera.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FirstRayTracing.dir/build.make CMakeFiles/FirstRayTracing.dir/model/camera.cpp.s
+.PHONY : model/camera.cpp.s
+
 model/object_list.o: model/object_list.cpp.o
 .PHONY : model/object_list.o
 
@@ -318,6 +342,9 @@ help:
 	@echo "... model/Sphere.o"
 	@echo "... model/Sphere.i"
 	@echo "... model/Sphere.s"
+	@echo "... model/camera.o"
+	@echo "... model/camera.i"
+	@echo "... model/camera.s"
 	@echo "... model/object_list.o"
 	@echo "... model/object_list.i"
 	@echo "... model/object_list.s"
