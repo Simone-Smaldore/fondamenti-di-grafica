@@ -6,8 +6,12 @@
 #include "utilitySDL.h"
 #include "Sphere.h"
 #include "camera.h"
+#include <vector>
+#include <windows.h>
+#include <ppl.h>
 
 using namespace std;
+using namespace concurrency;
 
 void showRayTracing() {
 
@@ -35,7 +39,29 @@ void showRayTracing() {
     vec3 startBackgroundColor(1.0f, 1.0f, 1.0f);
     vec3 endBackgroundColor(0.5f, 0.7f, 1.0f);
 
-    int ns = 256;
+    int ns = 16;
+
+    //vector<vec3> matrix(image_width*image_height);
+
+    //parallel_for(int(0), image_height, [&](int j) {
+    //    for (int i = 0; i < image_width; i++) {
+    //        vec3 color(0.0, 0.0, 0.0);
+    //        for (int s = 0; s < ns; s++) {
+    //            ray r = cam.get_ray(float((i + randZeroToOne()) / image_width), float((j + randZeroToOne()) / image_height));
+    //            color += getColor(scene, r, startBackgroundColor, endBackgroundColor);;
+    //        }
+    //        matrix[j * image_width + i] = color / float(ns);
+    //    }
+    //});
+
+    //for (int j = 0; j < image_height; j++) {
+    //    for (int i = 0; i < image_width; i++) {
+    //        vec3 color = matrix[j * image_width + i];
+    //        setColor(renderer, color.x, color.y, color.z);
+    //        setPixel(renderer, i, j, image_height);
+    //    }
+    //}
+    
 
     for (int j = 0; j < image_height; j++) {
         for (int i = 0; i < image_width; i++) {
