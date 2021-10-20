@@ -273,6 +273,30 @@ model/object_list.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/FirstRayTracing.dir/build.make CMakeFiles/FirstRayTracing.dir/model/object_list.cpp.s
 .PHONY : model/object_list.cpp.s
 
+model/plane.o: model/plane.cpp.o
+.PHONY : model/plane.o
+
+# target to build an object file
+model/plane.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FirstRayTracing.dir/build.make CMakeFiles/FirstRayTracing.dir/model/plane.cpp.o
+.PHONY : model/plane.cpp.o
+
+model/plane.i: model/plane.cpp.i
+.PHONY : model/plane.i
+
+# target to preprocess a source file
+model/plane.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FirstRayTracing.dir/build.make CMakeFiles/FirstRayTracing.dir/model/plane.cpp.i
+.PHONY : model/plane.cpp.i
+
+model/plane.s: model/plane.cpp.s
+.PHONY : model/plane.s
+
+# target to generate assembly for a file
+model/plane.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FirstRayTracing.dir/build.make CMakeFiles/FirstRayTracing.dir/model/plane.cpp.s
+.PHONY : model/plane.cpp.s
+
 rayTracing/rayTracing.o: rayTracing/rayTracing.cpp.o
 .PHONY : rayTracing/rayTracing.o
 
@@ -348,6 +372,9 @@ help:
 	@echo "... model/object_list.o"
 	@echo "... model/object_list.i"
 	@echo "... model/object_list.s"
+	@echo "... model/plane.o"
+	@echo "... model/plane.i"
+	@echo "... model/plane.s"
 	@echo "... rayTracing/rayTracing.o"
 	@echo "... rayTracing/rayTracing.i"
 	@echo "... rayTracing/rayTracing.s"

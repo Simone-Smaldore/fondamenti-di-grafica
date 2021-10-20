@@ -123,6 +123,12 @@
 		<Unit filename="/Users/Simone/Desktop/Universita/Fondamenti Di Grafica/ProgettiGitHub/FirstRayTracing/model/object_list.h">
 			<Option target="FirstRayTracing"/>
 		</Unit>
+		<Unit filename="/Users/Simone/Desktop/Universita/Fondamenti Di Grafica/ProgettiGitHub/FirstRayTracing/model/plane.cpp">
+			<Option target="FirstRayTracing"/>
+		</Unit>
+		<Unit filename="/Users/Simone/Desktop/Universita/Fondamenti Di Grafica/ProgettiGitHub/FirstRayTracing/model/plane.h">
+			<Option target="FirstRayTracing"/>
+		</Unit>
 		<Unit filename="/Users/Simone/Desktop/Universita/Fondamenti Di Grafica/ProgettiGitHub/FirstRayTracing/rayTracing/rayTracing.cpp">
 			<Option target="FirstRayTracing"/>
 		</Unit>

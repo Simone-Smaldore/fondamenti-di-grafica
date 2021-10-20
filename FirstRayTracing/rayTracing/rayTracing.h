@@ -11,5 +11,4 @@ vec3 getColor(object_list* scene, ray &r, vec3 &startColor, vec3 &endColor, floa
 
 void showRayTracing();
 
-
 #endif //FIRSTSDL_RAYTRACING_H
