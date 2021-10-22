@@ -6,6 +6,9 @@
 #include "../utilitySDL/utilitySDL.h"
 #include "../model/Sphere.h"
 #include "../model/camera.h"
+#include "../model/plane.h"
+#include "../model/disk.h"
+#include "../model/quadrilateral.h"
 
 using namespace std;
 
@@ -33,15 +36,32 @@ void showRayTracing() {
         return;
     }
 
-    int num_elements = 4;
+    int num_elements = 1;
     Object *list[num_elements];
-    list[0] = new Sphere(point3d(-1.1f, 0.0f, -2.0f), 1.0);
-    list[1] = new Sphere(point3d(1.1f, 0.0f, -2.0f), 1.0);
-    list[2] = new Sphere(point3d(-3.4f, 0.0f, -2.0f), 1.0);
-    list[3] = new Sphere(point3d(3.4f, 0.0f, -2.0f), 1.0);
+//    list[0] = new Sphere(point3d(-1.1f, 0.0f, -2.0f), 1.0);
+//    list[1] = new Sphere(point3d(1.1f, 0.0f, -2.0f), 1.0);
+//    list[2] = new Sphere(point3d(-3.4f, 0.0f, -2.0f), 1.0);
+//    list[3] = new Sphere(point3d(3.4f, 0.0f, -2.0f), 1.0);
+
 //    Per i colori custom
 //    list[0] -> color = vec3(1.0,0.0,0.0);
 //    list[1] -> color = vec3(0.0,0.0,1.0);
+
+//  QUALUNQUE SIA IL PIANO AVRO UN LIMITE DATO DA TMAX
+//    list[0] = new plane(point3d(0.0f, -2.0f, 0.0f), vec3(0,1,0));
+
+//   DISCO
+//    list[0] = new disk(point3d(-1.0f, -1.0f, -5.0f), vec3(0.7,1,0), 2);
+
+//  QUADRILATERO
+//    list[0] = new quadrilateral(point3d(1.5f, 0.0f, 0.0f), vec3(.5,.5,.5),  vec3(0,1,0));
+//    list[0] -> color = vec3(1.0,0.0,0.0);
+//    list[1] = new quadrilateral(point3d(-1.5f, 0.0f, 0.0f), vec3(0,1,0), vec3(.5,.5,.5));
+//    list[1] -> color = vec3(0.0,1.0,0.0);
+
+    list[0] = new quadrilateral(point3d(1.5f, 0.0f, 0.0f), vec3(.5,.5,.5),  vec3(0,1,0));
+    list[0] -> color = vec3(1.0,0.0,0.0);
+
     object_list *scene = new object_list(list, num_elements);
 
     vec3 startBackgroundColor(1.0f, 1.0f, 1.0f);
@@ -52,7 +72,7 @@ void showRayTracing() {
             vec3 color(0.0, 0.0, 0.0);
             for (int s = 0; s < ns; s++) {
                 ray r = cam.get_ray(float((i + randZeroToOne()) / image_width), float((j + randZeroToOne()) / image_height));
-                color += getColor(scene, r, startBackgroundColor, endBackgroundColor);;
+                color += getColor(scene, r, startBackgroundColor, endBackgroundColor);
             }
             color = color / float(ns);
             color = vec3(sqrt(color[0]), sqrt(color[1]), sqrt(color[2])); //GAMMA CORRECTION
@@ -70,8 +90,8 @@ void showRayTracing() {
 vec3 getColor(object_list* scene, ray &r, vec3 &startColor, vec3 &endColor, float t_min, float t_max){
     hit_record hit;
     if(scene->trace_ray(r, t_min, t_max, hit)) {
-//        return scene->list[hit.object_index]->color;
-        return 0.5f * (vec3(hit.normal.x, hit.normal.y, hit.normal.z) + vec3(1.0, 1.0, 1.0));
+        return scene->list[hit.object_index]->color;
+//        return 0.5f * (vec3(hit.normal.x, hit.normal.y, hit.normal.z) + vec3(1.0, 1.0, 1.0));
     } else {
         return colorLerpY(r, startColor, endColor);
     }

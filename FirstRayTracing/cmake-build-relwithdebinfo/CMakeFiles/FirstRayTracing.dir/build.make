@@ -183,6 +183,32 @@ CMakeFiles/FirstRayTracing.dir/model/plane.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FirstRayTracing.dir/model/plane.cpp.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/Simone/Desktop/Universita/Fondamenti Di Grafica/ProgettiGitHub/FirstRayTracing/model/plane.cpp" -o CMakeFiles/FirstRayTracing.dir/model/plane.cpp.s
 
+CMakeFiles/FirstRayTracing.dir/model/disk.cpp.o: CMakeFiles/FirstRayTracing.dir/flags.make
+CMakeFiles/FirstRayTracing.dir/model/disk.cpp.o: ../model/disk.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/Simone/Desktop/Universita/Fondamenti Di Grafica/ProgettiGitHub/FirstRayTracing/cmake-build-relwithdebinfo/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/FirstRayTracing.dir/model/disk.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/FirstRayTracing.dir/model/disk.cpp.o -c "/Users/Simone/Desktop/Universita/Fondamenti Di Grafica/ProgettiGitHub/FirstRayTracing/model/disk.cpp"
+
+CMakeFiles/FirstRayTracing.dir/model/disk.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/FirstRayTracing.dir/model/disk.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/Simone/Desktop/Universita/Fondamenti Di Grafica/ProgettiGitHub/FirstRayTracing/model/disk.cpp" > CMakeFiles/FirstRayTracing.dir/model/disk.cpp.i
+
+CMakeFiles/FirstRayTracing.dir/model/disk.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FirstRayTracing.dir/model/disk.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/Simone/Desktop/Universita/Fondamenti Di Grafica/ProgettiGitHub/FirstRayTracing/model/disk.cpp" -o CMakeFiles/FirstRayTracing.dir/model/disk.cpp.s
+
+CMakeFiles/FirstRayTracing.dir/model/quadrilateral.cpp.o: CMakeFiles/FirstRayTracing.dir/flags.make
+CMakeFiles/FirstRayTracing.dir/model/quadrilateral.cpp.o: ../model/quadrilateral.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/Simone/Desktop/Universita/Fondamenti Di Grafica/ProgettiGitHub/FirstRayTracing/cmake-build-relwithdebinfo/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/FirstRayTracing.dir/model/quadrilateral.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/FirstRayTracing.dir/model/quadrilateral.cpp.o -c "/Users/Simone/Desktop/Universita/Fondamenti Di Grafica/ProgettiGitHub/FirstRayTracing/model/quadrilateral.cpp"
+
+CMakeFiles/FirstRayTracing.dir/model/quadrilateral.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/FirstRayTracing.dir/model/quadrilateral.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/Simone/Desktop/Universita/Fondamenti Di Grafica/ProgettiGitHub/FirstRayTracing/model/quadrilateral.cpp" > CMakeFiles/FirstRayTracing.dir/model/quadrilateral.cpp.i
+
+CMakeFiles/FirstRayTracing.dir/model/quadrilateral.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FirstRayTracing.dir/model/quadrilateral.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/Simone/Desktop/Universita/Fondamenti Di Grafica/ProgettiGitHub/FirstRayTracing/model/quadrilateral.cpp" -o CMakeFiles/FirstRayTracing.dir/model/quadrilateral.cpp.s
+
 # Object files for target FirstRayTracing
 FirstRayTracing_OBJECTS = \
 "CMakeFiles/FirstRayTracing.dir/main.cpp.o" \
@@ -193,7 +219,9 @@ FirstRayTracing_OBJECTS = \
 "CMakeFiles/FirstRayTracing.dir/model/Sphere.cpp.o" \
 "CMakeFiles/FirstRayTracing.dir/model/object_list.cpp.o" \
 "CMakeFiles/FirstRayTracing.dir/model/camera.cpp.o" \
-"CMakeFiles/FirstRayTracing.dir/model/plane.cpp.o"
+"CMakeFiles/FirstRayTracing.dir/model/plane.cpp.o" \
+"CMakeFiles/FirstRayTracing.dir/model/disk.cpp.o" \
+"CMakeFiles/FirstRayTracing.dir/model/quadrilateral.cpp.o"
 
 # External object files for target FirstRayTracing
 FirstRayTracing_EXTERNAL_OBJECTS =
@@ -207,9 +235,11 @@ FirstRayTracing: CMakeFiles/FirstRayTracing.dir/model/Sphere.cpp.o
 FirstRayTracing: CMakeFiles/FirstRayTracing.dir/model/object_list.cpp.o
 FirstRayTracing: CMakeFiles/FirstRayTracing.dir/model/camera.cpp.o
 FirstRayTracing: CMakeFiles/FirstRayTracing.dir/model/plane.cpp.o
+FirstRayTracing: CMakeFiles/FirstRayTracing.dir/model/disk.cpp.o
+FirstRayTracing: CMakeFiles/FirstRayTracing.dir/model/quadrilateral.cpp.o
 FirstRayTracing: CMakeFiles/FirstRayTracing.dir/build.make
 FirstRayTracing: CMakeFiles/FirstRayTracing.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/Simone/Desktop/Universita/Fondamenti Di Grafica/ProgettiGitHub/FirstRayTracing/cmake-build-relwithdebinfo/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable FirstRayTracing"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/Simone/Desktop/Universita/Fondamenti Di Grafica/ProgettiGitHub/FirstRayTracing/cmake-build-relwithdebinfo/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable FirstRayTracing"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/FirstRayTracing.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

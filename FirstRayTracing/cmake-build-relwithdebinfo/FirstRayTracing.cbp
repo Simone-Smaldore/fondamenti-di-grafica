@@ -117,6 +117,12 @@
 		<Unit filename="/Users/Simone/Desktop/Universita/Fondamenti Di Grafica/ProgettiGitHub/FirstRayTracing/model/camera.h">
 			<Option target="FirstRayTracing"/>
 		</Unit>
+		<Unit filename="/Users/Simone/Desktop/Universita/Fondamenti Di Grafica/ProgettiGitHub/FirstRayTracing/model/disk.cpp">
+			<Option target="FirstRayTracing"/>
+		</Unit>
+		<Unit filename="/Users/Simone/Desktop/Universita/Fondamenti Di Grafica/ProgettiGitHub/FirstRayTracing/model/disk.h">
+			<Option target="FirstRayTracing"/>
+		</Unit>
 		<Unit filename="/Users/Simone/Desktop/Universita/Fondamenti Di Grafica/ProgettiGitHub/FirstRayTracing/model/object_list.cpp">
 			<Option target="FirstRayTracing"/>
 		</Unit>
@@ -127,6 +133,12 @@
 			<Option target="FirstRayTracing"/>
 		</Unit>
 		<Unit filename="/Users/Simone/Desktop/Universita/Fondamenti Di Grafica/ProgettiGitHub/FirstRayTracing/model/plane.h">
+			<Option target="FirstRayTracing"/>
+		</Unit>
+		<Unit filename="/Users/Simone/Desktop/Universita/Fondamenti Di Grafica/ProgettiGitHub/FirstRayTracing/model/quadrilateral.cpp">
+			<Option target="FirstRayTracing"/>
+		</Unit>
+		<Unit filename="/Users/Simone/Desktop/Universita/Fondamenti Di Grafica/ProgettiGitHub/FirstRayTracing/model/quadrilateral.h">
 			<Option target="FirstRayTracing"/>
 		</Unit>
 		<Unit filename="/Users/Simone/Desktop/Universita/Fondamenti Di Grafica/ProgettiGitHub/FirstRayTracing/rayTracing/rayTracing.cpp">

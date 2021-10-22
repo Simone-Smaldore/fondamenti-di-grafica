@@ -249,6 +249,30 @@ model/camera.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/FirstRayTracing.dir/build.make CMakeFiles/FirstRayTracing.dir/model/camera.cpp.s
 .PHONY : model/camera.cpp.s
 
+model/disk.o: model/disk.cpp.o
+.PHONY : model/disk.o
+
+# target to build an object file
+model/disk.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FirstRayTracing.dir/build.make CMakeFiles/FirstRayTracing.dir/model/disk.cpp.o
+.PHONY : model/disk.cpp.o
+
+model/disk.i: model/disk.cpp.i
+.PHONY : model/disk.i
+
+# target to preprocess a source file
+model/disk.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FirstRayTracing.dir/build.make CMakeFiles/FirstRayTracing.dir/model/disk.cpp.i
+.PHONY : model/disk.cpp.i
+
+model/disk.s: model/disk.cpp.s
+.PHONY : model/disk.s
+
+# target to generate assembly for a file
+model/disk.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FirstRayTracing.dir/build.make CMakeFiles/FirstRayTracing.dir/model/disk.cpp.s
+.PHONY : model/disk.cpp.s
+
 model/object_list.o: model/object_list.cpp.o
 .PHONY : model/object_list.o
 
@@ -296,6 +320,30 @@ model/plane.s: model/plane.cpp.s
 model/plane.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/FirstRayTracing.dir/build.make CMakeFiles/FirstRayTracing.dir/model/plane.cpp.s
 .PHONY : model/plane.cpp.s
+
+model/quadrilateral.o: model/quadrilateral.cpp.o
+.PHONY : model/quadrilateral.o
+
+# target to build an object file
+model/quadrilateral.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FirstRayTracing.dir/build.make CMakeFiles/FirstRayTracing.dir/model/quadrilateral.cpp.o
+.PHONY : model/quadrilateral.cpp.o
+
+model/quadrilateral.i: model/quadrilateral.cpp.i
+.PHONY : model/quadrilateral.i
+
+# target to preprocess a source file
+model/quadrilateral.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FirstRayTracing.dir/build.make CMakeFiles/FirstRayTracing.dir/model/quadrilateral.cpp.i
+.PHONY : model/quadrilateral.cpp.i
+
+model/quadrilateral.s: model/quadrilateral.cpp.s
+.PHONY : model/quadrilateral.s
+
+# target to generate assembly for a file
+model/quadrilateral.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FirstRayTracing.dir/build.make CMakeFiles/FirstRayTracing.dir/model/quadrilateral.cpp.s
+.PHONY : model/quadrilateral.cpp.s
 
 rayTracing/rayTracing.o: rayTracing/rayTracing.cpp.o
 .PHONY : rayTracing/rayTracing.o
@@ -369,12 +417,18 @@ help:
 	@echo "... model/camera.o"
 	@echo "... model/camera.i"
 	@echo "... model/camera.s"
+	@echo "... model/disk.o"
+	@echo "... model/disk.i"
+	@echo "... model/disk.s"
 	@echo "... model/object_list.o"
 	@echo "... model/object_list.i"
 	@echo "... model/object_list.s"
 	@echo "... model/plane.o"
 	@echo "... model/plane.i"
 	@echo "... model/plane.s"
+	@echo "... model/quadrilateral.o"
+	@echo "... model/quadrilateral.i"
+	@echo "... model/quadrilateral.s"
 	@echo "... rayTracing/rayTracing.o"
 	@echo "... rayTracing/rayTracing.i"
 	@echo "... rayTracing/rayTracing.s"
