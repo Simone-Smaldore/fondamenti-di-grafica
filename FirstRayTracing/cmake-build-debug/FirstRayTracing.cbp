@@ -147,6 +147,12 @@
 		<Unit filename="/Users/Simone/Desktop/Universita/Fondamenti Di Grafica/ProgettiGitHub/FirstRayTracing/model/quadrilateral.h">
 			<Option target="FirstRayTracing"/>
 		</Unit>
+		<Unit filename="/Users/Simone/Desktop/Universita/Fondamenti Di Grafica/ProgettiGitHub/FirstRayTracing/model/triangle.cpp">
+			<Option target="FirstRayTracing"/>
+		</Unit>
+		<Unit filename="/Users/Simone/Desktop/Universita/Fondamenti Di Grafica/ProgettiGitHub/FirstRayTracing/model/triangle.h">
+			<Option target="FirstRayTracing"/>
+		</Unit>
 		<Unit filename="/Users/Simone/Desktop/Universita/Fondamenti Di Grafica/ProgettiGitHub/FirstRayTracing/rayTracing/rayTracing.cpp">
 			<Option target="FirstRayTracing"/>
 		</Unit>

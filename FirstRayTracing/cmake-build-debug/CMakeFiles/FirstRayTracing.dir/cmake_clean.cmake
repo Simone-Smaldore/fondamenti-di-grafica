@@ -9,6 +9,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/FirstRayTracing.dir/model/object_list.cpp.o"
   "CMakeFiles/FirstRayTracing.dir/model/plane.cpp.o"
   "CMakeFiles/FirstRayTracing.dir/model/quadrilateral.cpp.o"
+  "CMakeFiles/FirstRayTracing.dir/model/triangle.cpp.o"
   "CMakeFiles/FirstRayTracing.dir/rayTracing/rayTracing.cpp.o"
   "CMakeFiles/FirstRayTracing.dir/utilitySDL/utilitySDL.cpp.o"
   "FirstRayTracing"

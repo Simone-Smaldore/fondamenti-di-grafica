@@ -4,12 +4,14 @@
 #include "rayTracing.h"
 #include "SDL.h"
 #include "../utilitySDL/utilitySDL.h"
+#include "../utilitySDL/utilitySDLInline.h"
 #include "../model/Sphere.h"
 #include "../model/camera.h"
 #include "../model/plane.h"
 #include "../model/disk.h"
 #include "../model/quadrilateral.h"
 #include "../model/box.h"
+#include "../model/triangle.h"
 
 using namespace std;
 
@@ -62,10 +64,10 @@ void showRayTracing() {
 
 // BOX INUTILE ASSEGNARE IL COLOR USO LA STRATEGIA DI COLORE CON LA NORMALE
 //    list[0] = new box(point3d(2.0f, -1.50f, -3.0f), vec3(1.0f,0,0),  vec3(0,1.0f,0), vec3(0,0,1.0f));
-//    list[1] = new box(point3d(-2.0f, 1.0f, -2.0f), vec3(1.0f,0,0),  vec3(0,1.0f,0), vec3(0,0,1.0f));
+//    list[1] = new box(point3d(-5.0f, 1.0f, -5.0f), vec3(1.0f,0,0),  vec3(0,1.0f,0), vec3(0,0,1.0f));
 //    list[2] = new box(point3d(-2.0f, -1.5f, -1.0f), vec3(1.0f,0,0),  vec3(0,1.0f,0), vec3(0,0,1.0f));
 
-    list[0] = new box(point3d(2.0f, -1.50f, -1.0f), vec3(1.0f,0,0),  vec3(0,1.0f,0), vec3(0,0,1.0f));
+    list[0] = new triangle(point3d(0.0f, -1.0f, -1.0f),  point3d(1.0f, 2.0f, -1.0f),point3d(0.0f, 2.0f, -1.0f));
     list[0] -> color = vec3(1.0,0.0,0.0);
 
     object_list *scene = new object_list(list, num_elements);
@@ -96,14 +98,11 @@ void showRayTracing() {
 vec3 getColor(object_list* scene, ray &r, vec3 &startColor, vec3 &endColor, float t_min, float t_max){
     hit_record hit;
     if(scene->trace_ray(r, t_min, t_max, hit)) {
-//        return scene->list[hit.object_index]->color;
-        return 0.5f * (vec3(hit.normal.x, hit.normal.y, hit.normal.z) + vec3(1.0, 1.0, 1.0));
+        return scene->list[hit.object_index]->color;
+//        return 0.5f * (vec3(hit.normal.x, hit.normal.y, hit.normal.z) + vec3(1.0, 1.0, 1.0));
     } else {
         return colorLerpY(r, startColor, endColor);
     }
 }
 
-float randZeroToOne() {
-    return ((float) rand()) / (float) RAND_MAX;
-}
 

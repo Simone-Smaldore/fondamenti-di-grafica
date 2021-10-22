@@ -85,4 +85,8 @@ inline bool isInfinitesimalNumber(float f) {
     return false;
 }
 
+inline float randZeroToOne() {
+    return ((float) rand()) / (float) RAND_MAX;
+}
+
 #endif //FIRSTSDL_UTILITYSDLINLINE_H
