@@ -111,6 +111,12 @@
 		<Unit filename="/Users/Simone/Desktop/Universita/Fondamenti Di Grafica/ProgettiGitHub/FirstRayTracing/model/Sphere.h">
 			<Option target="FirstRayTracing"/>
 		</Unit>
+		<Unit filename="/Users/Simone/Desktop/Universita/Fondamenti Di Grafica/ProgettiGitHub/FirstRayTracing/model/box.cpp">
+			<Option target="FirstRayTracing"/>
+		</Unit>
+		<Unit filename="/Users/Simone/Desktop/Universita/Fondamenti Di Grafica/ProgettiGitHub/FirstRayTracing/model/box.h">
+			<Option target="FirstRayTracing"/>
+		</Unit>
 		<Unit filename="/Users/Simone/Desktop/Universita/Fondamenti Di Grafica/ProgettiGitHub/FirstRayTracing/model/camera.cpp">
 			<Option target="FirstRayTracing"/>
 		</Unit>

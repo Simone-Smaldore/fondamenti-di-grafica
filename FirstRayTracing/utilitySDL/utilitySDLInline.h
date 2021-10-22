@@ -78,4 +78,11 @@ inline vec3 colorLerpZ(ray &r, vec3 &startColor, vec3 &endColor) {
     return color(unit_direction.z, startColor, endColor);
 }
 
+inline bool isInfinitesimalNumber(float f) {
+    if(abs(f) < 0.0001) {
+        return true;
+    }
+    return false;
+}
+
 #endif //FIRSTSDL_UTILITYSDLINLINE_H

@@ -9,6 +9,7 @@
 #include "../model/plane.h"
 #include "../model/disk.h"
 #include "../model/quadrilateral.h"
+#include "../model/box.h"
 
 using namespace std;
 
@@ -27,7 +28,7 @@ void showRayTracing() {
 
     int const image_width = 800;
     int const image_height = 400;
-    int ns = 16;
+    int ns = 32;
 
     time_t start_time = time(NULL);
 
@@ -59,7 +60,12 @@ void showRayTracing() {
 //    list[1] = new quadrilateral(point3d(-1.5f, 0.0f, 0.0f), vec3(0,1,0), vec3(.5,.5,.5));
 //    list[1] -> color = vec3(0.0,1.0,0.0);
 
-    list[0] = new quadrilateral(point3d(1.5f, 0.0f, 0.0f), vec3(.5,.5,.5),  vec3(0,1,0));
+// BOX INUTILE ASSEGNARE IL COLOR USO LA STRATEGIA DI COLORE CON LA NORMALE
+//    list[0] = new box(point3d(2.0f, -1.50f, -3.0f), vec3(1.0f,0,0),  vec3(0,1.0f,0), vec3(0,0,1.0f));
+//    list[1] = new box(point3d(-2.0f, 1.0f, -2.0f), vec3(1.0f,0,0),  vec3(0,1.0f,0), vec3(0,0,1.0f));
+//    list[2] = new box(point3d(-2.0f, -1.5f, -1.0f), vec3(1.0f,0,0),  vec3(0,1.0f,0), vec3(0,0,1.0f));
+
+    list[0] = new box(point3d(2.0f, -1.50f, -1.0f), vec3(1.0f,0,0),  vec3(0,1.0f,0), vec3(0,0,1.0f));
     list[0] -> color = vec3(1.0,0.0,0.0);
 
     object_list *scene = new object_list(list, num_elements);
@@ -90,8 +96,8 @@ void showRayTracing() {
 vec3 getColor(object_list* scene, ray &r, vec3 &startColor, vec3 &endColor, float t_min, float t_max){
     hit_record hit;
     if(scene->trace_ray(r, t_min, t_max, hit)) {
-        return scene->list[hit.object_index]->color;
-//        return 0.5f * (vec3(hit.normal.x, hit.normal.y, hit.normal.z) + vec3(1.0, 1.0, 1.0));
+//        return scene->list[hit.object_index]->color;
+        return 0.5f * (vec3(hit.normal.x, hit.normal.y, hit.normal.z) + vec3(1.0, 1.0, 1.0));
     } else {
         return colorLerpY(r, startColor, endColor);
     }
