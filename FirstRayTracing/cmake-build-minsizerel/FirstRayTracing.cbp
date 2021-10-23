@@ -135,6 +135,12 @@
 		<Unit filename="/Users/Simone/Desktop/Universita/Fondamenti Di Grafica/ProgettiGitHub/FirstRayTracing/model/object_list.h">
 			<Option target="FirstRayTracing"/>
 		</Unit>
+		<Unit filename="/Users/Simone/Desktop/Universita/Fondamenti Di Grafica/ProgettiGitHub/FirstRayTracing/model/parallelCamera.cpp">
+			<Option target="FirstRayTracing"/>
+		</Unit>
+		<Unit filename="/Users/Simone/Desktop/Universita/Fondamenti Di Grafica/ProgettiGitHub/FirstRayTracing/model/parallelCamera.h">
+			<Option target="FirstRayTracing"/>
+		</Unit>
 		<Unit filename="/Users/Simone/Desktop/Universita/Fondamenti Di Grafica/ProgettiGitHub/FirstRayTracing/model/plane.cpp">
 			<Option target="FirstRayTracing"/>
 		</Unit>

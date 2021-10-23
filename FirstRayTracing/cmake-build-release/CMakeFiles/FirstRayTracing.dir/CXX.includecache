@@ -38,6 +38,10 @@ Object.h
 Object.h
 /Users/Simone/Desktop/Universita/Fondamenti Di Grafica/ProgettiGitHub/FirstRayTracing/model/Object.h
 
+/Users/Simone/Desktop/Universita/Fondamenti Di Grafica/ProgettiGitHub/FirstRayTracing/model/parallelCamera.h
+../utilitySDL/utilitySDLInline.h
+/Users/Simone/Desktop/Universita/Fondamenti Di Grafica/ProgettiGitHub/FirstRayTracing/utilitySDL/utilitySDLInline.h
+
 /Users/Simone/Desktop/Universita/Fondamenti Di Grafica/ProgettiGitHub/FirstRayTracing/model/plane.h
 Object.h
 /Users/Simone/Desktop/Universita/Fondamenti Di Grafica/ProgettiGitHub/FirstRayTracing/model/Object.h
@@ -79,6 +83,8 @@ SDL.h
 /Users/Simone/Desktop/Universita/Fondamenti Di Grafica/ProgettiGitHub/FirstRayTracing/model/Sphere.h
 ../model/camera.h
 /Users/Simone/Desktop/Universita/Fondamenti Di Grafica/ProgettiGitHub/FirstRayTracing/model/camera.h
+../model/parallelCamera.h
+/Users/Simone/Desktop/Universita/Fondamenti Di Grafica/ProgettiGitHub/FirstRayTracing/model/parallelCamera.h
 ../model/plane.h
 /Users/Simone/Desktop/Universita/Fondamenti Di Grafica/ProgettiGitHub/FirstRayTracing/model/plane.h
 ../model/disk.h

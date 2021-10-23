@@ -9,6 +9,7 @@
 #include "../utilitySDL/utilitySDLInline.h"
 #include "../model/Sphere.h"
 #include "../model/camera.h"
+#include "../model/parallelCamera.h"
 #include "../model/plane.h"
 #include "../model/disk.h"
 #include "../model/quadrilateral.h"
@@ -37,6 +38,7 @@ void showRayTracing() {
     float aspectRatio = 16/8;
 
     camera cam(cameraPosition, cameraOrientation, upVector, fieldOfView, aspectRatio);
+//    parallelCamera cam(cameraPosition, cameraOrientation, upVector, fieldOfView, aspectRatio);
 
     int const image_width = 1000;
     int const image_height = 500;
@@ -49,12 +51,12 @@ void showRayTracing() {
         return;
     }
 
-    int num_elements = 1;
+    int num_elements = 4;
     Object *list[num_elements];
-//    list[0] = new Sphere(point3d(-1.1f, 0.0f, -2.0f), 1.0);
-//    list[1] = new Sphere(point3d(1.1f, 0.0f, -2.0f), 1.0);
-//    list[2] = new Sphere(point3d(-3.4f, 0.0f, -2.0f), 1.0);
-//    list[3] = new Sphere(point3d(3.4f, 0.0f, -2.0f), 1.0);
+    list[0] = new Sphere(point3d(-1.1f, 0.0f, -2.0f), 1.0);
+    list[1] = new Sphere(point3d(1.1f, 0.0f, -2.0f), 1.0);
+    list[2] = new Sphere(point3d(-3.4f, 0.0f, -2.0f), 1.0);
+    list[3] = new Sphere(point3d(3.4f, 0.0f, -2.0f), 1.0);
 
 //    Per i colori custom
 //    list[0] -> color = vec3(1.0,0.0,0.0);
@@ -77,9 +79,13 @@ void showRayTracing() {
 //    list[1] = new box(point3d(-5.0f, 1.0f, -5.0f), vec3(1.0f,0,0),  vec3(0,1.0f,0), vec3(0,0,1.0f));
 //    list[2] = new box(point3d(-2.0f, -1.5f, -1.0f), vec3(1.0f,0,0),  vec3(0,1.0f,0), vec3(0,0,1.0f));
 
-    list[0] = new triangle(point3d(0.0f, -1.0f, -1.0f),  point3d(1.0f, 2.0f, -1.0f),point3d(0.0f, 2.0f, -1.0f));
-    list[0] -> color = vec3(1.0,0.0,0.0);
+// TRIANGLE
+//    list[0] = new triangle(point3d(0.0f, -1.0f, -1.0f),  point3d(1.0f, 2.0f, -1.0f),point3d(0.0f, 2.0f, -1.0f));
+//    list[0] -> color = vec3(1.0,0.0,0.0);
 
+// EXAMPLE PARALLEL CAMERA
+//    list[0] = new Sphere(point3d(-1.1f, 0.0f, -2.0f), 1.0);
+//    list[1] = new Sphere(point3d(1.1f, 0.0f, -20.0f), 1.0);
     object_list *scene = new object_list(list, num_elements);
 
     vec3 startBackgroundColor(1.0f, 1.0f, 1.0f);

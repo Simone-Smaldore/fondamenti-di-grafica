@@ -321,6 +321,30 @@ model/object_list.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/FirstRayTracing.dir/build.make CMakeFiles/FirstRayTracing.dir/model/object_list.cpp.s
 .PHONY : model/object_list.cpp.s
 
+model/parallelCamera.o: model/parallelCamera.cpp.o
+.PHONY : model/parallelCamera.o
+
+# target to build an object file
+model/parallelCamera.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FirstRayTracing.dir/build.make CMakeFiles/FirstRayTracing.dir/model/parallelCamera.cpp.o
+.PHONY : model/parallelCamera.cpp.o
+
+model/parallelCamera.i: model/parallelCamera.cpp.i
+.PHONY : model/parallelCamera.i
+
+# target to preprocess a source file
+model/parallelCamera.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FirstRayTracing.dir/build.make CMakeFiles/FirstRayTracing.dir/model/parallelCamera.cpp.i
+.PHONY : model/parallelCamera.cpp.i
+
+model/parallelCamera.s: model/parallelCamera.cpp.s
+.PHONY : model/parallelCamera.s
+
+# target to generate assembly for a file
+model/parallelCamera.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FirstRayTracing.dir/build.make CMakeFiles/FirstRayTracing.dir/model/parallelCamera.cpp.s
+.PHONY : model/parallelCamera.cpp.s
+
 model/plane.o: model/plane.cpp.o
 .PHONY : model/plane.o
 
@@ -474,6 +498,9 @@ help:
 	@echo "... model/object_list.o"
 	@echo "... model/object_list.i"
 	@echo "... model/object_list.s"
+	@echo "... model/parallelCamera.o"
+	@echo "... model/parallelCamera.i"
+	@echo "... model/parallelCamera.s"
 	@echo "... model/plane.o"
 	@echo "... model/plane.i"
 	@echo "... model/plane.s"
