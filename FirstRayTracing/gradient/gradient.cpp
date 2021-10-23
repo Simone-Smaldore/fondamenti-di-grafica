@@ -23,7 +23,7 @@ void showGradient() {
             setPixel(renderer, i, j, WindowConstants::SCREEN_HEIGHT);
         }
     }
-    update(renderer);
+    updateAndWait(renderer);
     close(renderer, window);
     return;
 }

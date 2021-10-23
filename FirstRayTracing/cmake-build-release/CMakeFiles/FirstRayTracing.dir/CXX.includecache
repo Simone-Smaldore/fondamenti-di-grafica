@@ -54,13 +54,9 @@ Object.h
 ../utilitySDL/utilitySDLInline.h
 /Users/Simone/Desktop/Universita/Fondamenti Di Grafica/ProgettiGitHub/FirstRayTracing/utilitySDL/utilitySDLInline.h
 
-/Users/Simone/Desktop/Universita/Fondamenti Di Grafica/ProgettiGitHub/FirstRayTracing/model/triangle.h
-Object.h
-/Users/Simone/Desktop/Universita/Fondamenti Di Grafica/ProgettiGitHub/FirstRayTracing/model/Object.h
-../utilitySDL/utilitySDLInline.h
-/Users/Simone/Desktop/Universita/Fondamenti Di Grafica/ProgettiGitHub/FirstRayTracing/utilitySDL/utilitySDLInline.h
-
-/Users/Simone/Desktop/Universita/Fondamenti Di Grafica/ProgettiGitHub/FirstRayTracing/rayTracing/rayTracing.cpp
+/Users/Simone/Desktop/Universita/Fondamenti Di Grafica/ProgettiGitHub/FirstRayTracing/model/rayTracingAnimation.cpp
+rayTracingAnimation.h
+/Users/Simone/Desktop/Universita/Fondamenti Di Grafica/ProgettiGitHub/FirstRayTracing/model/rayTracingAnimation.h
 iostream
 -
 list
@@ -71,38 +67,44 @@ vector
 -
 random
 -
-rayTracing.h
-/Users/Simone/Desktop/Universita/Fondamenti Di Grafica/ProgettiGitHub/FirstRayTracing/rayTracing/rayTracing.h
 SDL.h
-/Users/Simone/Desktop/Universita/Fondamenti Di Grafica/ProgettiGitHub/FirstRayTracing/rayTracing/SDL.h
+/Users/Simone/Desktop/Universita/Fondamenti Di Grafica/ProgettiGitHub/FirstRayTracing/model/SDL.h
 ../utilitySDL/utilitySDL.h
 /Users/Simone/Desktop/Universita/Fondamenti Di Grafica/ProgettiGitHub/FirstRayTracing/utilitySDL/utilitySDL.h
 ../utilitySDL/utilitySDLInline.h
 /Users/Simone/Desktop/Universita/Fondamenti Di Grafica/ProgettiGitHub/FirstRayTracing/utilitySDL/utilitySDLInline.h
-../model/Sphere.h
+Sphere.h
 /Users/Simone/Desktop/Universita/Fondamenti Di Grafica/ProgettiGitHub/FirstRayTracing/model/Sphere.h
-../model/camera.h
+camera.h
 /Users/Simone/Desktop/Universita/Fondamenti Di Grafica/ProgettiGitHub/FirstRayTracing/model/camera.h
-../model/parallelCamera.h
+parallelCamera.h
 /Users/Simone/Desktop/Universita/Fondamenti Di Grafica/ProgettiGitHub/FirstRayTracing/model/parallelCamera.h
-../model/plane.h
+plane.h
 /Users/Simone/Desktop/Universita/Fondamenti Di Grafica/ProgettiGitHub/FirstRayTracing/model/plane.h
-../model/disk.h
+disk.h
 /Users/Simone/Desktop/Universita/Fondamenti Di Grafica/ProgettiGitHub/FirstRayTracing/model/disk.h
-../model/quadrilateral.h
+quadrilateral.h
 /Users/Simone/Desktop/Universita/Fondamenti Di Grafica/ProgettiGitHub/FirstRayTracing/model/quadrilateral.h
-../model/box.h
+box.h
 /Users/Simone/Desktop/Universita/Fondamenti Di Grafica/ProgettiGitHub/FirstRayTracing/model/box.h
-../model/triangle.h
+triangle.h
 /Users/Simone/Desktop/Universita/Fondamenti Di Grafica/ProgettiGitHub/FirstRayTracing/model/triangle.h
 
-/Users/Simone/Desktop/Universita/Fondamenti Di Grafica/ProgettiGitHub/FirstRayTracing/rayTracing/rayTracing.h
+/Users/Simone/Desktop/Universita/Fondamenti Di Grafica/ProgettiGitHub/FirstRayTracing/model/rayTracingAnimation.h
 ../utilitySDL/utilitySDLInline.h
 /Users/Simone/Desktop/Universita/Fondamenti Di Grafica/ProgettiGitHub/FirstRayTracing/utilitySDL/utilitySDLInline.h
-../model/Object.h
+Object.h
 /Users/Simone/Desktop/Universita/Fondamenti Di Grafica/ProgettiGitHub/FirstRayTracing/model/Object.h
-../model/object_list.h
+object_list.h
 /Users/Simone/Desktop/Universita/Fondamenti Di Grafica/ProgettiGitHub/FirstRayTracing/model/object_list.h
+camera.h
+/Users/Simone/Desktop/Universita/Fondamenti Di Grafica/ProgettiGitHub/FirstRayTracing/model/camera.h
+
+/Users/Simone/Desktop/Universita/Fondamenti Di Grafica/ProgettiGitHub/FirstRayTracing/model/triangle.h
+Object.h
+/Users/Simone/Desktop/Universita/Fondamenti Di Grafica/ProgettiGitHub/FirstRayTracing/model/Object.h
+../utilitySDL/utilitySDLInline.h
+/Users/Simone/Desktop/Universita/Fondamenti Di Grafica/ProgettiGitHub/FirstRayTracing/utilitySDL/utilitySDLInline.h
 
 /Users/Simone/Desktop/Universita/Fondamenti Di Grafica/ProgettiGitHub/FirstRayTracing/utilitySDL/point3d.h
 sstream

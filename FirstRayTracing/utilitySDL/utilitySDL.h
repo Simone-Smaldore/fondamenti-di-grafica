@@ -9,6 +9,8 @@ int init(SDL_Window*& window, SDL_Renderer*& renderer, int screenWidth, int scre
 
 void close(SDL_Renderer* renderer, SDL_Window* window);
 
+void updateAndWait(SDL_Renderer*& renderer);
+
 void update(SDL_Renderer*& renderer);
 
 #endif //FIRSTSDL_UTILITYSDL_H

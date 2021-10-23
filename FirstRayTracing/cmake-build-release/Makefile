@@ -393,6 +393,30 @@ model/quadrilateral.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/FirstRayTracing.dir/build.make CMakeFiles/FirstRayTracing.dir/model/quadrilateral.cpp.s
 .PHONY : model/quadrilateral.cpp.s
 
+model/rayTracingAnimation.o: model/rayTracingAnimation.cpp.o
+.PHONY : model/rayTracingAnimation.o
+
+# target to build an object file
+model/rayTracingAnimation.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FirstRayTracing.dir/build.make CMakeFiles/FirstRayTracing.dir/model/rayTracingAnimation.cpp.o
+.PHONY : model/rayTracingAnimation.cpp.o
+
+model/rayTracingAnimation.i: model/rayTracingAnimation.cpp.i
+.PHONY : model/rayTracingAnimation.i
+
+# target to preprocess a source file
+model/rayTracingAnimation.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FirstRayTracing.dir/build.make CMakeFiles/FirstRayTracing.dir/model/rayTracingAnimation.cpp.i
+.PHONY : model/rayTracingAnimation.cpp.i
+
+model/rayTracingAnimation.s: model/rayTracingAnimation.cpp.s
+.PHONY : model/rayTracingAnimation.s
+
+# target to generate assembly for a file
+model/rayTracingAnimation.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FirstRayTracing.dir/build.make CMakeFiles/FirstRayTracing.dir/model/rayTracingAnimation.cpp.s
+.PHONY : model/rayTracingAnimation.cpp.s
+
 model/triangle.o: model/triangle.cpp.o
 .PHONY : model/triangle.o
 
@@ -507,6 +531,9 @@ help:
 	@echo "... model/quadrilateral.o"
 	@echo "... model/quadrilateral.i"
 	@echo "... model/quadrilateral.s"
+	@echo "... model/rayTracingAnimation.o"
+	@echo "... model/rayTracingAnimation.i"
+	@echo "... model/rayTracingAnimation.s"
 	@echo "... model/triangle.o"
 	@echo "... model/triangle.i"
 	@echo "... model/triangle.s"

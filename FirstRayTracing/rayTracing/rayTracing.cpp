@@ -18,14 +18,6 @@
 
 using namespace std;
 
-void printVectorElements(vector<int> &vec)
-{
-    for (auto i = 0; i < vec.size(); ++i) {
-        cout << vec.at(i) << "; ";
-    }
-    cout << endl;
-}
-
 void showRayTracing() {
 
     SDL_Window* window;
@@ -191,7 +183,7 @@ void showRayTracing() {
 
     time_t current_time = time(NULL);
     cout << "Impiegati " << current_time - start_time << " secondi per il rendering";
-    update(renderer);
+    updateAndWait(renderer);
     close(renderer, window);
 }
 
@@ -205,10 +197,4 @@ vec3 getColor(object_list* scene, ray &r, vec3 &startColor, vec3 &endColor, floa
     }
 }
 
-
-//cout << multiJitteredMatrix[0][0][1] << " " << multiJitteredMatrix[0][1][1] << " " << multiJitteredMatrix[0][2][1] << " " << multiJitteredMatrix[0][3][1] << " " << multiJitteredMatrix[0][4][1] << endl;
-//cout << multiJitteredMatrix[1][0][1] << " " << multiJitteredMatrix[1][1][1] << " " << multiJitteredMatrix[1][2][1] << " " << multiJitteredMatrix[1][3][1] << " " << multiJitteredMatrix[1][4][1] << endl;
-//cout << multiJitteredMatrix[2][0][1] << " " << multiJitteredMatrix[2][1][1] << " " << multiJitteredMatrix[2][2][1] << " " << multiJitteredMatrix[2][3][1] << " " << multiJitteredMatrix[2][4][1] << endl;
-//cout << multiJitteredMatrix[3][0][1] << " " << multiJitteredMatrix[3][1][1] << " " << multiJitteredMatrix[3][2][1] << " " << multiJitteredMatrix[3][3][1] << " " << multiJitteredMatrix[3][4][1] << endl;
-//cout << multiJitteredMatrix[4][0][1] << " " << multiJitteredMatrix[4][1][1] << " " << multiJitteredMatrix[4][2][1] << " " << multiJitteredMatrix[4][3][1] << " " << multiJitteredMatrix[4][4][1] << endl;
 

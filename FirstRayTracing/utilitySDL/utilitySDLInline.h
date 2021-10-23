@@ -62,7 +62,7 @@ inline float get_hit_sphere_t_value(const point3d &sphereCenter, float sphereRad
 
 inline vec3 color(float unit_direction, vec3 &startColor, vec3 &endColor) {
     float t = 0.5f * (unit_direction + 1.0f);
-    return lerp(vec3(1.0f, 1.0f, 1.0f), vec3(0.5f, 0.7f, 1.0f), t);
+    return lerp(startColor, endColor, t);
 }
 
 inline vec3 colorLerpX(ray &r, vec3 &startColor, vec3 &endColor) {
@@ -88,5 +88,6 @@ inline bool isInfinitesimalNumber(float f) {
 inline float randZeroToOne() {
     return ((float) rand()) / (float) RAND_MAX;
 }
+
 
 #endif //FIRSTSDL_UTILITYSDLINLINE_H
