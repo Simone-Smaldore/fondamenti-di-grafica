@@ -63,6 +63,10 @@ list
 -
 ctime
 -
+vector
+-
+random
+-
 rayTracing.h
 /Users/Simone/Desktop/Universita/Fondamenti Di Grafica/ProgettiGitHub/FirstRayTracing/rayTracing/rayTracing.h
 SDL.h

@@ -5,7 +5,6 @@
 
 class camera {
 
-public:
 
 public:
 

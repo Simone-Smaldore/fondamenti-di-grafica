@@ -2,7 +2,6 @@
 
 bool triangle::hit_object(const ray& ray, float t_min, float t_max, hit_record& rec) {
     vec3 normal = cross(p1-p2, p2-p3);
-    normal.z = -normal.z;
     float den = dot(ray.direction(), normal);
     if(den == 0) {
         return false;
