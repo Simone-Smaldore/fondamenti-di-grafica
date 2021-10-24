@@ -34,7 +34,7 @@ void close(SDL_Renderer* renderer, SDL_Window* window) {
     SDL_Quit();
 }
 
-void update(SDL_Renderer*& renderer) {
+void updateAndWait(SDL_Renderer*& renderer) {
     SDL_RenderPresent(renderer);
     SDL_Event e;
     SDL_PollEvent(&e);
@@ -42,3 +42,10 @@ void update(SDL_Renderer*& renderer) {
         SDL_PollEvent(&e);
     }
 }
+
+void update(SDL_Renderer*& renderer) {
+    SDL_RenderPresent(renderer);
+    SDL_Event e;
+    SDL_PollEvent(&e);
+}
+

@@ -1,6 +1,5 @@
 #pragma once
 
-
 #include "vec3.h"
 #include "point3d.h"
 #include "ray.h"
@@ -62,18 +61,31 @@ inline float get_hit_sphere_t_value(const point3d& sphereCenter, float sphereRad
 
 inline vec3 color(float unit_direction, vec3& startColor, vec3& endColor) {
     float t = 0.5f * (unit_direction + 1.0f);
-    return lerp(vec3(1.0f, 1.0f, 1.0f), vec3(0.5f, 0.7f, 1.0f), t);
+    return lerp(startColor, endColor, t);
 }
 
 inline vec3 colorLerpX(ray& r, vec3& startColor, vec3& endColor) {
     vec3 unit_direction = normalize(r.direction());
     return color(unit_direction.x, startColor, endColor);
 }
+
 inline vec3 colorLerpY(ray& r, vec3& startColor, vec3& endColor) {
     vec3 unit_direction = normalize(r.direction());
     return color(unit_direction.y, startColor, endColor);
 }
+
 inline vec3 colorLerpZ(ray& r, vec3& startColor, vec3& endColor) {
     vec3 unit_direction = normalize(r.direction());
     return color(unit_direction.z, startColor, endColor);
+}
+
+inline bool isInfinitesimalNumber(float f) {
+    if (abs(f) < 0.0001) {
+        return true;
+    }
+    return false;
+}
+
+inline float randZeroToOne() {
+    return ((float)rand()) / (float)RAND_MAX;
 }

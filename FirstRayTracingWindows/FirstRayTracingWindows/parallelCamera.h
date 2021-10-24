@@ -2,17 +2,18 @@
 #include "utilitySDLInline.h"
 #include "genericCamera.h"
 
-class camera : public genericCamera{
+class parallelCamera : public genericCamera {
 
 public:
 
-    camera(point3d pos, point3d lookat, vec3 up, float vfov, float aspect) {
+    parallelCamera(point3d pos, point3d lookat, vec3 up, float vfov, float aspect) {
         float theta = vfov * M_PI / 180.0f; //RADIANTI
         height = tan(theta / 2.0f) * 2.0f;
         width = height * aspect;
         lookPoint = lookat;
         position = pos;
         upVec = up;
+        direction = lookat - pos;
         update_camera();
     }
 
@@ -26,6 +27,7 @@ public:
     vec3 upVec;
     vec3 u, v, w;
     vec3 horizontal, vertical;
+    vec3 direction;
     float height, width;
 
 };
