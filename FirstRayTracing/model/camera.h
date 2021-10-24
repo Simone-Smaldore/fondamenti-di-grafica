@@ -10,7 +10,7 @@ public:
     camera(point3d pos, point3d lookat, vec3 up, float vfov, float aspect) {
         float theta = vfov*M_PI / 180.0f; //RADIANTI
         height = tan(theta / 2.0f) * 2.0f;
-        width = height * aspect * 2.0f;
+        width = height * aspect ;
         lookPoint = lookat;
         position = pos;
         upVec = up;
