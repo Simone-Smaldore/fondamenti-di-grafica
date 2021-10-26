@@ -17,6 +17,7 @@
 
 using namespace std;
 
+
 void showRayTracingAnimationUniverse() {
 
     SDL_Window* window;
@@ -39,6 +40,7 @@ void showRayTracingAnimationUniverse() {
         cout << "Gradient Error! " << std::endl;
         return;
     }
+    const bool NORMAL_COLOR = false;
     const int num_elements = 10;
     Object* list[num_elements];
     list[0] = new Sphere(point3d(0.0f, 0.0f, -6.0f), 12.0);
@@ -67,7 +69,8 @@ void showRayTracingAnimationUniverse() {
     vec3 startBackgroundColor(0.0f, 0.0f, 0.0f);
     vec3 endBackgroundColor(0.1f, 0.05f, 0.1f);
 
-    int ns = 1;
+    const int ns = 1;
+    const int nRockPerLayer = 5;
     float maxAngle = 360 * 20 * M_PI / 180.0f;
     int frames = 1280;
 
@@ -120,7 +123,8 @@ void showRayTracingAnimationUniverse() {
         uranus->center.z = sun->center.z + sphereCenterDistanceUranus * sin(i * speedUranusRatio + M_PI / 2);
         neptune->center.x = sun->center.x + sphereCenterDistanceNeptune * cos(i * speedNeptuneRatio + M_PI / 2);
         neptune->center.z = sun->center.z + sphereCenterDistanceNeptune * sin(i * speedNeptuneRatio + M_PI / 2);
-        renderFrame(cam, ns, image_height, image_width, renderer, scene, startBackgroundColor, endBackgroundColor);
+        renderFrameRandom(cam, ns, image_height, image_width, renderer, scene, startBackgroundColor, endBackgroundColor, NORMAL_COLOR);
+        //renderFrameMultiJittered(cam, nRockPerLayer, image_height, image_width, renderer, scene, startBackgroundColor, endBackgroundColor, NORMAL_COLOR);
         update(renderer);
     }
 

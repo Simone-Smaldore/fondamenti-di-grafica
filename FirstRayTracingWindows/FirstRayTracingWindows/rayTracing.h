@@ -5,7 +5,7 @@
 #include "object_list.h"
 #include "utilityRayTracing.h"
 
-float randZeroToOne();
-
 void showRayTracing();
+
+
 

@@ -39,6 +39,8 @@ void showRayTracingAnimationCube() {
         cout << "Gradient Error! " << std::endl;
         return;
     }
+    const bool NORMAL_COLOR = true;
+
     const int num_elements = 27;
     Object *list[num_elements];
     cam.position = point3d(7.0f, 8.0f, 11.0f);
@@ -73,13 +75,13 @@ void showRayTracingAnimationCube() {
     list[26] = new box(point3d(-4.08f, 0.58f, -5.08f), vec3(1.0f,0,0),  vec3(0,1.00,0), vec3(0,0,1.0f));
 
 
-
     object_list* scene = new object_list(list, num_elements);
 
     vec3 startBackgroundColor(0.0f, 0.0f, 0.0f);
     vec3 endBackgroundColor(0.1f, 0.05f, 0.1f);
 
     int ns = 1;
+    const int nRockPerLayer = 5;
     float maxAngle = 360 * 20 * M_PI / 180.0f;
     int frames = 1280;
 
@@ -89,7 +91,8 @@ void showRayTracingAnimationCube() {
         cam.position.y = cameraDistance * sin(i + M_PI / 2);
         cam.position.z = cameraDistance * sin(i + M_PI / 2);
         cam.update_camera();
-        renderFrame(cam, ns, image_height, image_width, renderer, scene, startBackgroundColor, endBackgroundColor);
+        renderFrameRandom(cam, ns, image_height, image_width, renderer, scene, startBackgroundColor, endBackgroundColor, NORMAL_COLOR);
+        //renderFrameMultiJittered(cam, nRockPerLayer, image_height, image_width, renderer, scene, startBackgroundColor, endBackgroundColor, NORMAL_COLOR);
         update(renderer);
     }
 
