@@ -126,13 +126,15 @@ void showRayTracingAnimationUniverse() {
         uranus->center.z = sun->center.z + sphereCenterDistanceUranus * sin(i * speedUranusRatio + M_PI / 2);
         neptune->center.x = sun->center.x + sphereCenterDistanceNeptune * cos(i * speedNeptuneRatio + M_PI / 2);
         neptune->center.z = sun->center.z + sphereCenterDistanceNeptune * sin(i * speedNeptuneRatio + M_PI / 2);
-        //renderFrameRandom(cam, ns, image_height, image_width, renderer, scene, startBackgroundColor, endBackgroundColor, NORMAL_COLOR);
-        renderFrameMultiJittered(cam, nRockPerLayer, image_height, image_width, renderer, scene, startBackgroundColor, endBackgroundColor, NORMAL_COLOR);
-        string url = baseUrl + to_string(cont) + ".bmp";
-        saveScreenshotBMP(url, window, renderer);
-        cont++;
-        cout << "SAVED FRAME IN " << url << endl;
+        renderFrameRandom(cam, ns, image_height, image_width, renderer, scene, startBackgroundColor, endBackgroundColor, NORMAL_COLOR);
+        //renderFrameMultiJittered(cam, nRockPerLayer, image_height, image_width, renderer, scene, startBackgroundColor, endBackgroundColor, NORMAL_COLOR);
         update(renderer);
+
+        //RIGHE PER LA GENERAZIONE DEI FRAME
+        //string url = baseUrl + to_string(cont) + ".bmp";
+        //saveScreenshotBMP(url, window, renderer);
+        //cont++;
+        //cout << "SAVED FRAME IN " << url << endl;
     }
 
     close(renderer, window);

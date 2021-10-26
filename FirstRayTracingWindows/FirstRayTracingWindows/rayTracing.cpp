@@ -58,20 +58,20 @@ void showRayTracing() {
     //list[0] = new plane(point3d(0.0f, -2.0f, 0.0f), vec3(0, 1, 0));
 
     //    DISK (CUSTOM COLOR)
-    const int num_elements = 6;
-    Object* list[num_elements];
-    list[0] = new disk(point3d(0.0f, 0.0f, -10.0f), vec3(0, 0, 1), 5);
-    list[1] = new disk(point3d(-1.5f, 1.0f, -5.0f), vec3(0.3, 0.9, 1), 1);
-    list[2] = new disk(point3d(1.5f, 1.0f, -5.0f), vec3(-0.3, 0.9, 1), 1);
-    list[3] = new disk(point3d(0.0f, -2.0f, -5.0f), vec3(0.0, 1, 0.4), 0.7);
-    list[4] = new disk(point3d(-1.0f, 0.9f, -3.0f), vec3(0.0, 0, 1), 0.25);
-    list[5] = new disk(point3d(1.3f, 1.0f, -3.0f), vec3(0.0, 0, 1), 0.25);
-    list[0]->color = vec3(1, 1, 0);
-    list[1]->color = vec3(1, 1, 1);
-    list[2]->color = vec3(1, 1, 1);
-    list[3]->color = vec3(1, 0, 0);
-    list[4]->color = vec3(0, 0, 0);
-    list[5]->color = vec3(0, 0, 0);
+    //const int num_elements = 6;
+    //Object* list[num_elements];
+    //list[0] = new disk(point3d(0.0f, 0.0f, -10.0f), vec3(0, 0, 1), 5);
+    //list[1] = new disk(point3d(-1.5f, 1.0f, -5.0f), vec3(0.3, 0.9, 1), 1);
+    //list[2] = new disk(point3d(1.5f, 1.0f, -5.0f), vec3(-0.3, 0.9, 1), 1);
+    //list[3] = new disk(point3d(0.0f, -2.0f, -5.0f), vec3(0.0, 1, 0.4), 0.7);
+    //list[4] = new disk(point3d(-1.0f, 0.9f, -3.0f), vec3(0.0, 0, 1), 0.25);
+    //list[5] = new disk(point3d(1.3f, 1.0f, -3.0f), vec3(0.0, 0, 1), 0.25);
+    //list[0]->color = vec3(1, 1, 0);
+    //list[1]->color = vec3(1, 1, 1);
+    //list[2]->color = vec3(1, 1, 1);
+    //list[3]->color = vec3(1, 0, 0);
+    //list[4]->color = vec3(0, 0, 0);
+    //list[5]->color = vec3(0, 0, 0);
 
     //    QUADRILATERAL (CUSTOM COLOR)
     //const int num_elements = 2;
@@ -129,10 +129,10 @@ void showRayTracing() {
     //list[8] = new triangle(point3d(-1.0f, 0.0f, -1.0f), point3d(0.0f, 0.5f, -1.1f), point3d(1.0f, 0.0f, -1.0f));
 
     //    EXAMPLE PARALLEL CAMERA (NORMAL COLOR) (CHANGE CAMERA TYPE TO SEE DIFFERENCES)
-    //const int num_elements = 2;
-    //Object* list[num_elements];
-    //list[0] = new Sphere(point3d(-0.35f, 0.0f, 5.0f), 0.3);
-    //list[1] = new Sphere(point3d(0.35f, 0.0f, -2.0f), 0.3);
+    const int num_elements = 2;
+    Object* list[num_elements];
+    list[0] = new Sphere(point3d(-0.35f, 0.0f, 5.0f), 0.3);
+    list[1] = new Sphere(point3d(0.35f, 0.0f, -2.0f), 0.3);
 
 
     object_list* scene = new object_list(list, num_elements);

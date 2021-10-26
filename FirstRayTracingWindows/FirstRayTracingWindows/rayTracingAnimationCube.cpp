@@ -94,13 +94,15 @@ void showRayTracingAnimationCube() {
         cam.position.y = cameraDistance * sin(i + M_PI / 2);
         cam.position.z = cameraDistance * sin(i + M_PI / 2);
         cam.update_camera();
-        //renderFrameRandom(cam, ns, image_height, image_width, renderer, scene, startBackgroundColor, endBackgroundColor, NORMAL_COLOR);
-        renderFrameMultiJittered(cam, nRockPerLayer, image_height, image_width, renderer, scene, startBackgroundColor, endBackgroundColor, NORMAL_COLOR);
-        string url = baseUrl + to_string(cont) + ".bmp";
-        saveScreenshotBMP(url, window, renderer);
-        cont++;
-        cout << "SAVED FRAME IN " << url << endl;
+        renderFrameRandom(cam, ns, image_height, image_width, renderer, scene, startBackgroundColor, endBackgroundColor, NORMAL_COLOR);
+        //renderFrameMultiJittered(cam, nRockPerLayer, image_height, image_width, renderer, scene, startBackgroundColor, endBackgroundColor, NORMAL_COLOR);
         update(renderer);
+
+        //RIGHE PER LA GENERAZIONE DEI FRAME
+        //string url = baseUrl + to_string(cont) + ".bmp";
+        //saveScreenshotBMP(url, window, renderer);
+        //cont++;
+        //cout << "SAVED FRAME IN " << url << endl;
     }
 
     close(renderer, window);

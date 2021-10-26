@@ -1,4 +1,4 @@
-﻿  main.cpp
+﻿  rayTracing.cpp
 C:\Users\simon\Desktop\Universita\Magistrale\Quinto anno\Fondamenti Di Grafica Tridimensionale\ProgettiGit\FirstRayTracingWindows\FirstRayTracingWindows\utilitySDLInline.h(19,45): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
 C:\Users\simon\Desktop\Universita\Magistrale\Quinto anno\Fondamenti Di Grafica Tridimensionale\ProgettiGit\FirstRayTracingWindows\FirstRayTracingWindows\utilitySDLInline.h(44,13): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
 C:\Users\simon\Desktop\Universita\Magistrale\Quinto anno\Fondamenti Di Grafica Tridimensionale\ProgettiGit\FirstRayTracingWindows\FirstRayTracingWindows\utilitySDLInline.h(53,13): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
@@ -6,9 +6,12 @@ C:\Users\simon\Desktop\Universita\Magistrale\Quinto anno\Fondamenti Di Grafica T
 C:\Users\simon\Desktop\Universita\Magistrale\Quinto anno\Fondamenti Di Grafica Tridimensionale\ProgettiGit\FirstRayTracingWindows\FirstRayTracingWindows\utilityRayTracing.h(4,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
 C:\Users\simon\Desktop\Universita\Magistrale\Quinto anno\Fondamenti Di Grafica Tridimensionale\ProgettiGit\FirstRayTracingWindows\FirstRayTracingWindows\utilityRayTracing.h(5,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
 C:\Users\simon\Desktop\Universita\Magistrale\Quinto anno\Fondamenti Di Grafica Tridimensionale\ProgettiGit\FirstRayTracingWindows\FirstRayTracingWindows\camera.h(10,21): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\simon\Desktop\Universita\Magistrale\Quinto anno\Fondamenti Di Grafica Tridimensionale\ProgettiGit\FirstRayTracingWindows\FirstRayTracingWindows\parallelCamera.h(10,21): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\simon\Desktop\Universita\Magistrale\Quinto anno\Fondamenti Di Grafica Tridimensionale\ProgettiGit\FirstRayTracingWindows\FirstRayTracingWindows\rayTracing.cpp(134,59): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\simon\Desktop\Universita\Magistrale\Quinto anno\Fondamenti Di Grafica Tridimensionale\ProgettiGit\FirstRayTracingWindows\FirstRayTracingWindows\rayTracing.cpp(135,59): warning C4305: 'argument': truncation from 'double' to 'float'
   Generating code
-  23 of 491 functions ( 4.7%) were compiled, the rest were copied from previous compilation.
+  6 of 456 functions ( 1.3%) were compiled, the rest were copied from previous compilation.
     1 functions were new in current compilation
-    2 functions had inline decision re-evaluated but remain unchanged
+    1 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   FirstRayTracingWindows.vcxproj -> C:\Users\simon\Desktop\Universita\Magistrale\Quinto anno\Fondamenti Di Grafica Tridimensionale\ProgettiGit\FirstRayTracingWindows\FirstRayTracingWindows\Release\FirstRayTracingWindows.exe
