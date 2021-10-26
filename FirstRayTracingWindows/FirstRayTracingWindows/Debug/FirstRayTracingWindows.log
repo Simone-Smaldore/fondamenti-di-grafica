@@ -1,0 +1,5 @@
+﻿  rayTracing.cpp
+C:\Users\simon\Desktop\Universita\Magistrale\Quinto anno\Fondamenti Di Grafica Tridimensionale\ProgettiGit\FirstRayTracingWindows\FirstRayTracingWindows\utilitySDLInline.h(20,45): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\simon\Desktop\Universita\Magistrale\Quinto anno\Fondamenti Di Grafica Tridimensionale\ProgettiGit\FirstRayTracingWindows\FirstRayTracingWindows\utilitySDLInline.h(45,13): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\simon\Desktop\Universita\Magistrale\Quinto anno\Fondamenti Di Grafica Tridimensionale\ProgettiGit\FirstRayTracingWindows\FirstRayTracingWindows\utilitySDLInline.h(54,13): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  FirstRayTracingWindows.vcxproj -> C:\Users\simon\Desktop\Universita\Magistrale\Quinto anno\Fondamenti Di Grafica Tridimensionale\ProgettiGit\FirstRayTracingWindows\FirstRayTracingWindows\Debug\FirstRayTracingWindows.exe

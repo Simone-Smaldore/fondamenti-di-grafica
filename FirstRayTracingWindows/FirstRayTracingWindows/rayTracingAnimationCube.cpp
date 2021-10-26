@@ -19,6 +19,8 @@ using namespace std;
 
 void showRayTracingAnimationCube() {
 
+    string baseUrl = "C:\\Users\\simon\\Desktop\\Universita\\Magistrale\\Quinto anno\\Fondamenti Di Grafica Tridimensionale\\ProgettiGit\\FirstRayTracingWindows\\FirstRayTracingWindows\\imgCube\\";
+
     SDL_Window* window;
     SDL_Renderer* renderer;
 
@@ -84,6 +86,7 @@ void showRayTracingAnimationCube() {
     const int nRockPerLayer = 5;
     float maxAngle = 360 * 20 * M_PI / 180.0f;
     int frames = 1280;
+    int cont = 1;
 
     float cameraDistance = 12.0f;
     for (float i = maxAngle / frames; i <= maxAngle; i += maxAngle / frames) {
@@ -91,8 +94,12 @@ void showRayTracingAnimationCube() {
         cam.position.y = cameraDistance * sin(i + M_PI / 2);
         cam.position.z = cameraDistance * sin(i + M_PI / 2);
         cam.update_camera();
-        renderFrameRandom(cam, ns, image_height, image_width, renderer, scene, startBackgroundColor, endBackgroundColor, NORMAL_COLOR);
-        //renderFrameMultiJittered(cam, nRockPerLayer, image_height, image_width, renderer, scene, startBackgroundColor, endBackgroundColor, NORMAL_COLOR);
+        //renderFrameRandom(cam, ns, image_height, image_width, renderer, scene, startBackgroundColor, endBackgroundColor, NORMAL_COLOR);
+        renderFrameMultiJittered(cam, nRockPerLayer, image_height, image_width, renderer, scene, startBackgroundColor, endBackgroundColor, NORMAL_COLOR);
+        string url = baseUrl + to_string(cont) + ".bmp";
+        saveScreenshotBMP(url, window, renderer);
+        cont++;
+        cout << "SAVED FRAME IN " << url << endl;
         update(renderer);
     }
 

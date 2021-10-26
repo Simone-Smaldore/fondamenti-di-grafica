@@ -20,6 +20,8 @@ using namespace std;
 
 void showRayTracingAnimationUniverse() {
 
+    string baseUrl = "C:\\Users\\simon\\Desktop\\Universita\\Magistrale\\Quinto anno\\Fondamenti Di Grafica Tridimensionale\\ProgettiGit\\FirstRayTracingWindows\\FirstRayTracingWindows\\img\\";
+
     SDL_Window* window;
     SDL_Renderer* renderer;
 
@@ -73,6 +75,7 @@ void showRayTracingAnimationUniverse() {
     const int nRockPerLayer = 5;
     float maxAngle = 360 * 20 * M_PI / 180.0f;
     int frames = 1280;
+    int cont = 0;
 
     float sphereCenterDistanceEarth = 30.0f;
     float sphereCenterDistanceMoon = 3.0f;
@@ -123,8 +126,12 @@ void showRayTracingAnimationUniverse() {
         uranus->center.z = sun->center.z + sphereCenterDistanceUranus * sin(i * speedUranusRatio + M_PI / 2);
         neptune->center.x = sun->center.x + sphereCenterDistanceNeptune * cos(i * speedNeptuneRatio + M_PI / 2);
         neptune->center.z = sun->center.z + sphereCenterDistanceNeptune * sin(i * speedNeptuneRatio + M_PI / 2);
-        renderFrameRandom(cam, ns, image_height, image_width, renderer, scene, startBackgroundColor, endBackgroundColor, NORMAL_COLOR);
-        //renderFrameMultiJittered(cam, nRockPerLayer, image_height, image_width, renderer, scene, startBackgroundColor, endBackgroundColor, NORMAL_COLOR);
+        //renderFrameRandom(cam, ns, image_height, image_width, renderer, scene, startBackgroundColor, endBackgroundColor, NORMAL_COLOR);
+        renderFrameMultiJittered(cam, nRockPerLayer, image_height, image_width, renderer, scene, startBackgroundColor, endBackgroundColor, NORMAL_COLOR);
+        string url = baseUrl + to_string(cont) + ".bmp";
+        saveScreenshotBMP(url, window, renderer);
+        cont++;
+        cout << "SAVED FRAME IN " << url << endl;
         update(renderer);
     }
 
