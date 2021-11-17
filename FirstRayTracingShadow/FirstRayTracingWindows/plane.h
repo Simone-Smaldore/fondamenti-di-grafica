@@ -13,13 +13,8 @@ public:
         color = vec3(0.0, 0.0, 0.0);
     };
 
-    plane(point3d c, vec3 n, material *m) {
-        p0 = c;
-        normal = n;
-        mat = *m;
-    };
-
     bool hit_object(const ray& ray, float t_min, float t_max, hit_record& rec) override;
-    string toString() override;
+    bool hit_shadow(const ray& ray, float t_min, float t_max) override;
+    string toString();
 };
 

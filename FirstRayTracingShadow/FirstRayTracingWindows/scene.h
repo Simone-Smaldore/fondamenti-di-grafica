@@ -15,7 +15,6 @@ class scene {
 	public:
 		int nx;
 		int ny;
-		int ns;
 
 		vector<Object*> objs_vector;
 
@@ -24,21 +23,28 @@ class scene {
 
 		scene(){}
 
-		void render(SDL_Renderer*& renderer);
+		void renderRandom(SDL_Renderer*& renderer, int ns);
 
-		void parallelRender(SDL_Renderer*& renderer);
+		void parallelRenderRandom(SDL_Renderer*& renderer, int ns);
+
+		void parallelRenderJittered(SDL_Renderer*& renderer, int numLayers);
+
+		void parallelRenderNRooks(SDL_Renderer*& renderer, int nRockSize);
+
+		void parallelRenderMultiJittered(SDL_Renderer*& renderer, int nRockPerLayer);
 
 		void addObject(Object* new_object);
 
 		void addLight(point_light* new_light);
 		
-		void setCamera(point3d position, point3d lookat, vec3 up, float fov, int res_x, int res_y, int n_sampling);
+		void setCamera(point3d position, point3d lookat, vec3 up, float fov, int res_x, int res_y);
 
 		
 	private:
 		color shot(const ray& r);
 		bool trace_ray(const ray& r, float t_min, float t_max, hit_record& rec) const;
 		bool trace_shadow_ray(const ray& r, const float closest_light, int hit_index) const;
+		void updateRendererFromMatrix(int image_height, int image_width, SDL_Renderer*& renderer, vector<color>& matrix);
 
 };
 

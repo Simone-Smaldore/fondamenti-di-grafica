@@ -10,7 +10,6 @@ bool triangle::hit_object(const ray& ray, float t_min, float t_max, hit_record& 
     rec.t = t;
     rec.p = ray.point_at_parameter(rec.t);
     rec.normal = normal;
-    rec.m = mat;
     if (t < t_min || t > t_max) {
         return false;
     }
@@ -21,6 +20,33 @@ bool triangle::hit_object(const ray& ray, float t_min, float t_max, hit_record& 
     vec3 diagonal1 = cross(side1, rec.p - p1);
     vec3 diagonal2 = cross(side2, rec.p - p2);
     vec3 diagonal3 = cross(side3, rec.p - p3);
+    if (dot(normal, diagonal1) > 0 && dot(normal, diagonal2) > 0 && dot(normal, diagonal3) > 0) {
+        return true;
+    }
+    if (dot(normal, diagonal1) < 0 && dot(normal, diagonal2) < 0 && dot(normal, diagonal3) < 0) {
+        return true;
+    }
+    return false;
+}
+
+bool triangle::hit_shadow(const ray& ray, float t_min, float t_max) {
+    vec3 normal = cross(p1 - p2, p2 - p3);
+    float den = dot(ray.direction(), normal);
+    if (den == 0) {
+        return false;
+    }
+    float t = dot(p1 - ray.origin(), normal) / den;
+    point3d p = ray.point_at_parameter(t);
+    if (t < t_min || t > t_max) {
+        return false;
+    }
+
+    vec3 side1 = p2 - p1;
+    vec3 side2 = p3 - p2;
+    vec3 side3 = p1 - p3;
+    vec3 diagonal1 = cross(side1, p - p1);
+    vec3 diagonal2 = cross(side2, p - p2);
+    vec3 diagonal3 = cross(side3, p - p3);
     if (dot(normal, diagonal1) > 0 && dot(normal, diagonal2) > 0 && dot(normal, diagonal3) > 0) {
         return true;
     }

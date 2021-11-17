@@ -15,6 +15,7 @@ color phong_shading(point_light& light, hit_record& hr, camera& cam) {
 	float LDotN = max(dot(L, hr.normal), 0.0f);
 
 	if (LDotN > 0) {
+		// TODO AGGIUNGERE L'ATTENUAZIONE QUADRATICA ?
 		diffuse = hr.m.kd * light.diffuse * LDotN;
 
 		vec3 R = reflect(L, hr.normal);
@@ -32,10 +33,6 @@ color phong_shading(point_light& light, hit_record& hr, camera& cam) {
 
 color ambient_shading(point_light& light, hit_record& hr) {
 	color ambient(0.0, 0.0, 0.0);
-	color diffuse(0.0, 0.0, 0.0);
-	color specular(0.0, 0.0, 0.0);
-
 	ambient = hr.m.ka * light.ambient;
-
 	return ambient;
 }

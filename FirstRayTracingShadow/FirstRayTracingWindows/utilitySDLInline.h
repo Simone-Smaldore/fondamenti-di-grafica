@@ -107,3 +107,7 @@ inline bool isInfinitesimalNumber(float f) {
 inline float randZeroToOne() {
     return ((float)rand()) / (float)RAND_MAX;
 }
+
+inline float deg2rad(float deg) {
+    return deg * M_PI / 180.0;
+}

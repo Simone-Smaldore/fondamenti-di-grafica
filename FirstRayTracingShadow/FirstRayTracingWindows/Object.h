@@ -1,8 +1,8 @@
 #pragma once
 
 #include "utilitySDLInline.h"
-#include <list>
 #include "material.h"
+#include <list>
 
 struct hit_record {
     float t;
@@ -14,14 +14,9 @@ struct hit_record {
 
 class Object {
 public:
-    material mat;
-
-    void setMaterial(material& m) {
-        mat = m;
-    }
 
     virtual bool hit_object(const ray& ray, float t_min, float t_max, hit_record& rec) = 0;
-    virtual string toString() = 0;
+    virtual bool hit_shadow(const ray& r, float t_min, float t_max) = 0;
     vec3 color;
 
 };

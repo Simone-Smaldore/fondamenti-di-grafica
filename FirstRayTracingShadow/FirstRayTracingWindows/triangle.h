@@ -13,13 +13,7 @@ public:
         color = vec3(0.0, 0.0, 0.0);
     };
 
-    triangle(point3d point1, point3d point2, point3d point3, material *m) {
-        p1 = point1;
-        p2 = point2;
-        p3 = point3;
-        mat = *m;
-    };
-
     bool hit_object(const ray& ray, float t_min, float t_max, hit_record& rec) override;
-    string toString() override;
+    bool hit_shadow(const ray& ray, float t_min, float t_max) override;
+    string toString();
 };

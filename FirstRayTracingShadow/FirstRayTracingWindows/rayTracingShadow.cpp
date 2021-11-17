@@ -2,6 +2,7 @@
 #include "utilitySDL.h"
 #include "scene.h"
 #include "Sphere.h"
+#include "instance.h"
 
 using namespace std;
 
@@ -18,7 +19,7 @@ void showRayTracingShadow() {
 
     int const image_width = 1000;
     int const image_height = 500;
-    const int ns = 1;
+    const int ns = 2;
 
     time_t start_time = time(NULL);
 
@@ -30,36 +31,51 @@ void showRayTracingShadow() {
     scene world;
 
     color gray(0.7f, 0.7f, 0.7f);
-    //point3d light_position(6.0f, 6.0f, 0.0f);
     point3d light_position(-6.0f, 6.0f, 0.0f);
     point_light* light = new point_light(light_position, gray, gray, gray);
     world.addLight(light);
 
-    world.setCamera(cameraPosition, cameraOrientation, upVector, fieldOfView, image_width, image_height, ns);
+    world.setCamera(cameraPosition, cameraOrientation, upVector, fieldOfView, image_width, image_height);
 
-
+    Object* sphere_model = new Sphere(point3d(0,0,0), 1.0f); 
     srand(2);
     color randColor(randZeroToOne(), randZeroToOne(), randZeroToOne());
-    world.addObject(new Sphere(point3d(0, -1000, 0), 1000, new material(randColor, randColor , randColor, 4.0)));
+    instance* sphere_ptr = new instance(sphere_model, new material(randColor, randColor, randColor, 4.0));
+    sphere_ptr->scale(1000.0, 1000.0, 1000.0);
+    sphere_ptr->translate(0, -1000, 0);
+    world.addObject(sphere_ptr);
 
-    int i = 1;
+    randColor = color(randZeroToOne(), randZeroToOne(), randZeroToOne());
+    sphere_ptr = new instance(sphere_model, new material(randColor, randColor, randColor, 4.0));
+    sphere_ptr->translate(0, 1, 0);
+    world.addObject(sphere_ptr);
+
+    randColor = color(randZeroToOne(), randZeroToOne(), randZeroToOne());
+    sphere_ptr = new instance(sphere_model, new material(randColor, randColor, randColor, 4.0));
+    sphere_ptr->translate(-4, 1, 0);
+    world.addObject(sphere_ptr);
+
+    randColor = color(randZeroToOne(), randZeroToOne(), randZeroToOne());
+    sphere_ptr = new instance(sphere_model, new material(randColor, randColor, randColor, 4.0));
+    sphere_ptr->translate(4, 1, 0);
+    world.addObject(sphere_ptr);
+
     for (int a = -11; a < 11; a++) {
         for (int b = -11; b < 11; b++) {
-            float choose_mat = randZeroToOne();
-            point3d center(a + 0.9f * randZeroToOne(), 0.2f, b + 0.9f * randZeroToOne());
+            point3d center(a + 0.9f * randZeroToOne(),
+                0.2f,
+                b + 0.9f * randZeroToOne());
             randColor = color(randZeroToOne(), randZeroToOne(), randZeroToOne());
-            world.addObject(new Sphere(center, 0.2f, new material(randColor, randColor, randColor, 4.0)));
+            sphere_ptr = new instance(sphere_model, new material(randColor, randColor, randColor, 4.0));
+            sphere_ptr->scale(0.2f, 0.4f, 0.2f);
+            sphere_ptr->translate(center.x, center.y, center.z);
+            world.addObject(sphere_ptr);
         }
     }
 
-    randColor = color(randZeroToOne(), randZeroToOne(), randZeroToOne());
-    world.addObject(new Sphere(point3d(0, 1, 0), 1.0f, new material(randColor, randColor, randColor, 4.0)));
-    randColor = color(randZeroToOne(), randZeroToOne(), randZeroToOne());
-    world.addObject(new Sphere(point3d(-4, 1, 0), 1.0f, new material(randColor, randColor, randColor, 4.0)));
-    randColor = color(randZeroToOne(), randZeroToOne(), randZeroToOne());
-    world.addObject(new Sphere(point3d(4, 1, 0), 1.0f, new material(randColor, randColor, randColor, 4.0)));
 
-    world.parallelRender(renderer);
+    world.parallelRenderRandom(renderer, ns);
+    //world.parallelRenderMultiJittered(renderer, 4);
 
     time_t current_time = time(NULL);
     cout << "Impiegati " << current_time - start_time << " secondi per il rendering";
