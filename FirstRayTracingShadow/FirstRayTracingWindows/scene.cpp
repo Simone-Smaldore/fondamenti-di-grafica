@@ -7,9 +7,10 @@ void scene::addObject(Object* new_object) {
 	objs_vector.push_back(new_object);
 }
 
-void scene::addLight(point_light* new_light) {
-	light = new_light;
+void scene::addLight(light* new_light) {
+	lights.push_back(new_light);
 }
+
 
 void scene::setCamera(point3d position, point3d lookat, vec3 up, float fov, int res_x, int res_y) {
 	nx = res_x;
@@ -21,19 +22,22 @@ void scene::setCamera(point3d position, point3d lookat, vec3 up, float fov, int 
 color scene::shot(const ray& r) {
 	hit_record rec;
 	if (trace_ray(r, 0.0f, FLT_MAX, rec)) {
-		ray shadow_ray(rec.p, normalize(light->position - rec.p));
-		float closest_light = shadow_ray.t_at_point(light->position);
-		if (trace_shadow_ray(shadow_ray, closest_light, rec.object_index))
-			return ambient_shading(*light, rec);
-		else
-			return phong_shading(*light, rec, *cam);
+		if (lights.size() == 0) {
+			return color(0.7f, 0.7f, 0.7f);
+		}
+		color col = ambient_shading(*lights[0], rec);
+		for (int i = 0; i < lights.size(); i++) {
+			if (!lights[i]->trace_shadow_ray(rec, objs_vector)) {
+				col += phong_shading(*lights[i], rec, *cam, lights[i]->get_light_point_direction(rec));
+			}
+		}
+		return col;
 	}
 	else {
 		return colorLerpY(r,  color(1.0f, 1.0f, 1.0f), color(0.5f, 0.7f, 1.0f));
 	}
 }
 
-//TO DO AGGIUNGERE TUTTI GLI ALGORITMI
 void scene::renderRandom(SDL_Renderer*& renderer, int ns) {
 	for (int j = 0; j < ny; j++) {
 		for (int i = 0; i < nx; i++) {
@@ -191,17 +195,4 @@ bool scene::trace_ray(const ray& r, float t_min, float t_max, hit_record& rec) c
 		}
 	}
 	return hit_anything;
-}
-
-
-bool scene::trace_shadow_ray(const ray& r, const float closest_light, int hit_index) const {
-	for (int i = 0; i < objs_vector.size(); i++) {
-		if (i == hit_index) {
-			continue;
-		}
-		if (objs_vector[i]->hit_shadow(r, 0.0f, closest_light)) {
-			return true;
-		}
-	}
-	return false;
 }

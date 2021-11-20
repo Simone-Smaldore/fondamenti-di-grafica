@@ -3,6 +3,9 @@
 #include "scene.h"
 #include "Sphere.h"
 #include "instance.h"
+#include "spot_light.h"
+#include "point_light.h"
+#include "direction_light.h"
 
 using namespace std;
 
@@ -19,7 +22,7 @@ void showRayTracingShadow() {
 
     int const image_width = 1000;
     int const image_height = 500;
-    const int ns = 2;
+    const int ns = 1;
 
     time_t start_time = time(NULL);
 
@@ -31,9 +34,23 @@ void showRayTracingShadow() {
     scene world;
 
     color gray(0.7f, 0.7f, 0.7f);
+    vec3 light_direction(1, 1, 0);
+
     point3d light_position(-6.0f, 6.0f, 0.0f);
-    point_light* light = new point_light(light_position, gray, gray, gray);
-    world.addLight(light);
+    //point_light* p_light = new point_light(light_position, gray, gray, gray);
+    //world.addLight(p_light);
+
+    //point3d light_position(-6.0f, 6.0f, 0.0f);
+    //direction_light* d_light = new direction_light(normalize(light_direction), gray, gray, gray);
+    //world.addLight(d_light);
+
+    light_position = point3d(-6.0f, 9.0f, 0.0f);
+    spot_light* s_light = new spot_light(light_position, normalize(vec3(0,1,0)), 25.0, 2.7,gray, gray, gray);
+    world.addLight(s_light);
+
+    light_position = point3d(6.0f, 9.0f, 0.0f);
+    spot_light* s_light_2 = new spot_light(light_position, normalize(vec3(0, 1, 0)), 25.0, 2.7, gray, gray, gray);
+    world.addLight(s_light_2);
 
     world.setCamera(cameraPosition, cameraOrientation, upVector, fieldOfView, image_width, image_height);
 
@@ -75,7 +92,7 @@ void showRayTracingShadow() {
 
 
     world.parallelRenderRandom(renderer, ns);
-    //world.parallelRenderMultiJittered(renderer, 4);
+    //world.parallelRenderMultiJittered(renderer, 3);
 
     time_t current_time = time(NULL);
     cout << "Impiegati " << current_time - start_time << " secondi per il rendering";

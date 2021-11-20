@@ -4,14 +4,15 @@
 
 #pragma once
 
-color phong_shading(point_light& light, hit_record& hr, camera& cam) {
+color phong_shading(light& light, hit_record& hr, camera& cam, vec3 light_direction) {
 	color ambient(0.0, 0.0, 0.0);
 	color diffuse(0.0, 0.0, 0.0);
 	color specular(0.0, 0.0, 0.0);
 
-	ambient = hr.m.ka * light.ambient;
+	//ambient = hr.m.ka * light.ambient;
 
-	vec3 L = normalize(light.position - hr.p);
+	//vec3 L = normalize(light_position - hr.p);
+	vec3 L = normalize(light_direction);
 	float LDotN = max(dot(L, hr.normal), 0.0f);
 
 	if (LDotN > 0) {
@@ -31,7 +32,7 @@ color phong_shading(point_light& light, hit_record& hr, camera& cam) {
 		return ambient;
 }
 
-color ambient_shading(point_light& light, hit_record& hr) {
+color ambient_shading(light& light, hit_record& hr) {
 	color ambient(0.0, 0.0, 0.0);
 	ambient = hr.m.ka * light.ambient;
 	return ambient;

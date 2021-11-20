@@ -149,6 +149,12 @@
     <ClInclude Include="instance.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="spot_light.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="direction_light.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="FirstRayTracingWindows.rc">

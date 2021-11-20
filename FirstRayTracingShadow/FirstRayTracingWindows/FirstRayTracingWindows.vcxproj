@@ -164,6 +164,7 @@
     <ClInclude Include="box.h" />
     <ClInclude Include="camera.h" />
     <ClInclude Include="color.h" />
+    <ClInclude Include="direction_light.h" />
     <ClInclude Include="disk.h" />
     <ClInclude Include="genericCamera.h" />
     <ClInclude Include="instance.h" />
@@ -183,6 +184,7 @@
     <ClInclude Include="scene.h" />
     <ClInclude Include="shader.h" />
     <ClInclude Include="Sphere.h" />
+    <ClInclude Include="spot_light.h" />
     <ClInclude Include="triangle.h" />
     <ClInclude Include="utilityRayTracing.h" />
     <ClInclude Include="utilitySDL.h" />

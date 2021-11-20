@@ -2,6 +2,8 @@
 #include "light.h"
 #include "utilitySDLInline.h"
 
+using namespace std;
+
 class point_light : public light {
 
 	public:
@@ -14,6 +16,24 @@ class point_light : public light {
 			ambient = a;
 			diffuse = d;
 			specular = s;
+		}
+
+		bool trace_shadow_ray(hit_record& rec, vector<Object*> objs_vector) {
+			ray shadow_ray(rec.p, normalize(position - rec.p));
+			for (int i = 0; i < objs_vector.size(); i++) {
+				if (i == rec.object_index) {
+					continue;
+				}
+				int closest_light = shadow_ray.t_at_point(position);
+				if (objs_vector[i]->hit_shadow(shadow_ray, 0.0f, closest_light)) {
+					return true;
+				}
+			}
+			return false;
+		}
+
+		vec3 get_light_point_direction(hit_record& rec) {
+			return normalize(position - rec.p);
 		}
 
 };
