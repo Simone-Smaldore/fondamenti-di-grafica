@@ -22,10 +22,7 @@ public:
 	bool trace_shadow_ray(hit_record& rec, vector<Object*> objs_vector) {
 		ray shadow_ray(rec.p, direction);
 		for (int i = 0; i < objs_vector.size(); i++) {
-			if (i == rec.object_index) {
-				continue;
-			}
-			if (objs_vector[i]->hit_shadow(shadow_ray, 0.0f, FLT_MAX)) {
+			if (objs_vector[i]->hit_shadow(shadow_ray, 0.01f, FLT_MAX)) {
 				return true;
 			}
 		}

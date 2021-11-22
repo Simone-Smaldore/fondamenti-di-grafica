@@ -7,7 +7,7 @@ vec3 getColor(object_list* scene, ray& r, vec3& startColor, vec3& endColor, bool
     hit_record hit;
     if (scene->trace_ray(r, t_min, t_max, hit)) {
         if(normalColor) return 0.5f * (vec3(hit.normal.x, hit.normal.y, hit.normal.z) + vec3(1.0, 1.0, 1.0));
-        return scene->list[hit.object_index]->color;
+        //return scene->list[hit.object_index]->color;
     }
     else {
         return colorLerpY(r, startColor, endColor);

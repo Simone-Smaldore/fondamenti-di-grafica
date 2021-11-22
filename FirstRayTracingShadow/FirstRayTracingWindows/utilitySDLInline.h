@@ -111,3 +111,11 @@ inline float randZeroToOne() {
 inline float deg2rad(float deg) {
     return deg * M_PI / 180.0;
 }
+
+inline float max(const float a, const float b)
+{
+    return (a < b) ? b : a;
+}
+
+inline float ffmin(float a, float b) { return a < b ? a : b; }
+inline float ffmax(float a, float b) { return a > b ? a : b; }

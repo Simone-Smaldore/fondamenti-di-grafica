@@ -8,7 +8,6 @@ struct hit_record {
     float t;
     point3d p;
     vec3 normal;
-    int object_index;
     material m;
 };
 

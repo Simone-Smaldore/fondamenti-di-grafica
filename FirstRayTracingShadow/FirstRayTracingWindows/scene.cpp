@@ -191,7 +191,6 @@ bool scene::trace_ray(const ray& r, float t_min, float t_max, hit_record& rec) c
 			hit_anything = true;
 			closest_so_far = temp_rec.t;
 			rec = temp_rec;
-			rec.object_index = i;
 		}
 	}
 	return hit_anything;

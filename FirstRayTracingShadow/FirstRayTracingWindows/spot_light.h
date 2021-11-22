@@ -35,10 +35,7 @@ public:
 		}
 		int closest_light = shadow_ray.t_at_point(position);
 		for (int i = 0; i < objs_vector.size(); i++) {
-			if (i == rec.object_index) {
-				continue;
-			}
-			if (objs_vector[i]->hit_shadow(shadow_ray, 0.0f, closest_light)) {
+			if (objs_vector[i]->hit_shadow(shadow_ray, 0.01f, closest_light)) {
 				return true;
 			}
 		}
