@@ -1,4 +1,4 @@
-#include "rayTracingShadow.h"
+#include "secondaEsercitazione.h"
 #include "utilitySDL.h"
 #include "scene.h"
 #include "Sphere.h"
@@ -11,13 +11,13 @@
 
 using namespace std;
 
-void showRayTracingShadow() {
+void showSecondaEsercitazione() {
 
     SDL_Window* window;
     SDL_Renderer* renderer;
 
     //point3d cameraPosition(13.0f, 2.0f, 3.0f);
-    point3d cameraPosition(0.0f, 7.0f, 25.0f);
+    point3d cameraPosition(0.0f, 15.0f, 35.0f);
     point3d cameraOrientation(0.0f, 0.0f, 0.0f);
     vec3 upVector(0.0f, 1.0f, 0.0f);
     float fieldOfView = 20.0f;
@@ -47,13 +47,13 @@ void showRayTracingShadow() {
 
 
     //Object* model3d = new mesh("./models/bunny2.obj", "/models/");
-    Object* model3d = new mesh("./models/bunny2.obj", "/models/");
+    Object* model3d = new mesh("./models/stage.obj", "/models/");
     instance* mesh_ptr = new instance(model3d, new material(randColor, randColor, randColor, 4.0));
-    mesh_ptr->scale(10, 10, 10);
+    mesh_ptr->scale(0.4f, 0.4f, 0.4f);
     //mesh_ptr->rotate_y(45.0f);
     //mesh_ptr->translate(0.0f, -25.0f, -230.0f);
 
-    //world.addObject(mesh_ptr);
+    world.addObject(mesh_ptr);
 
     //point3d light_position(-6.0f, 6.0f, 0.0f);
     //direction_light* d_light = new direction_light(normalize(light_direction), gray, gray, gray);
@@ -76,13 +76,12 @@ void showRayTracingShadow() {
     sphere_ptr->translate(0, -1000, 0);
     world.addObject(sphere_ptr);
 
-    Object* cylinder_model = new cylinder(1.0f, 3.0f, 1.0f);
-    randColor = color(randZeroToOne(), randZeroToOne(), randZeroToOne());
-    instance* cylinder_ptr = new instance(cylinder_model, new material(randColor, randColor, randColor, 4.0));
-    //sphere_ptr->scale(1000.0, 1000.0, 1000.0);
-    cylinder_ptr->rotate_x(45);
-    cylinder_ptr->translate(0, 1.0f, 0);
-    world.addObject(cylinder_ptr);
+    //Object* cylinder_model = new cylinder(1.0f, 3.0f, 1.0f);
+    //randColor = color(randZeroToOne(), randZeroToOne(), randZeroToOne());
+    //instance* cylinder_ptr = new instance(cylinder_model, new material(randColor, randColor, randColor, 4.0));
+    //cylinder_ptr->rotate_x(45);
+    //cylinder_ptr->translate(0, 1.0f, 0);
+    //world.addObject(cylinder_ptr);
 
     //randColor = color(randZeroToOne(), randZeroToOne(), randZeroToOne());
     //sphere_ptr = new instance(sphere_model, new material(randColor, randColor, randColor, 4.0));
@@ -113,8 +112,8 @@ void showRayTracingShadow() {
     //}
 
 
-    world.parallelRenderRandom(renderer, ns);
-    //world.parallelRenderMultiJittered(renderer, 3);
+    //world.parallelRenderRandom(renderer, ns);
+    world.parallelRenderMultiJittered(renderer, 3);
 
     time_t current_time = time(NULL);
     cout << "Impiegati " << current_time - start_time << " secondi per il rendering";

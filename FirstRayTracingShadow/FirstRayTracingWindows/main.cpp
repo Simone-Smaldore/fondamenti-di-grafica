@@ -1,10 +1,10 @@
-#include "rayTracingShadow.h"
+#include "secondaEsercitazione.h"
 
 using namespace std;
 
 
 int main(int argc, char* argv[]) {
-    showRayTracingShadow();
+    showSecondaEsercitazione();
     return 0;
 }
 

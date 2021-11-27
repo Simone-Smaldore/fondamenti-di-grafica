@@ -142,6 +142,7 @@
   <ItemGroup>
     <ClCompile Include="box.cpp" />
     <ClCompile Include="camera.cpp" />
+    <ClCompile Include="cylinder.cpp" />
     <ClCompile Include="disk.cpp" />
     <ClCompile Include="instance.cpp" />
     <ClCompile Include="main.cpp" />
@@ -165,6 +166,7 @@
     <ClInclude Include="box.h" />
     <ClInclude Include="camera.h" />
     <ClInclude Include="color.h" />
+    <ClInclude Include="cylinder.h" />
     <ClInclude Include="direction_light.h" />
     <ClInclude Include="disk.h" />
     <ClInclude Include="genericCamera.h" />

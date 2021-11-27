@@ -42,3 +42,103 @@ FirstRayTracingShadow/FirstRayTracingWindows/Release/
 FirstRayTracingShadow/FirstRayTracingWindows/.vs/
 FirstRayTracingShadow/FirstRayTracingWindows/Debug/
 FirstRayTracingShadow/FirstRayTracingWindows/models/
+Seconda Esercitazione/Release/camera.obj
+Seconda Esercitazione/Release/cylinder.obj
+Seconda Esercitazione/Release/instance.obj
+Seconda Esercitazione/Release/libjpeg-9.dll
+Seconda Esercitazione/Release/libpng16-16.dll
+Seconda Esercitazione/Release/libtiff-5.dll
+Seconda Esercitazione/Release/libwebp-7.dll
+Seconda Esercitazione/Release/main.obj
+Seconda Esercitazione/Release/matrix4D.obj
+Seconda Esercitazione/Release/scene.obj
+Seconda Esercitazione/Release/SDL2.dll
+Seconda Esercitazione/Release/SDL2_image.dll
+Seconda Esercitazione/Release/Seconda Esercitazione.exe
+Seconda Esercitazione/Release/Seconda Esercitazione.exe.recipe
+Seconda Esercitazione/Release/Seconda Esercitazione.iobj
+Seconda Esercitazione/Release/Seconda Esercitazione.ipdb
+Seconda Esercitazione/Release/Seconda Esercitazione.log
+Seconda Esercitazione/Release/Seconda Esercitazione.pdb
+Seconda Esercitazione/Release/Seconda Esercitazione.vcxproj.FileListAbsolute.txt
+Seconda Esercitazione/Release/secondaEsercitazione.obj
+Seconda Esercitazione/Release/Sphere.obj
+Seconda Esercitazione/Release/texture.obj
+Seconda Esercitazione/Release/utilityRayTracing.obj
+Seconda Esercitazione/Release/utilitySDL.obj
+Seconda Esercitazione/Release/vc142.pdb
+Seconda Esercitazione/Release/zlib1.dll
+Seconda Esercitazione/Release/Seconda .cb594738.tlog/CL.command.1.tlog
+Seconda Esercitazione/Release/Seconda .cb594738.tlog/CL.read.1.tlog
+Seconda Esercitazione/Release/Seconda .cb594738.tlog/CL.write.1.tlog
+Seconda Esercitazione/Release/Seconda .cb594738.tlog/link.command.1.tlog
+Seconda Esercitazione/Release/Seconda .cb594738.tlog/link.read.1.tlog
+Seconda Esercitazione/Release/Seconda .cb594738.tlog/link.write.1.tlog
+Seconda Esercitazione/Release/Seconda .cb594738.tlog/Seconda Esercitazione.lastbuildstate
+Seconda Esercitazione/Release/Seconda .cb594738.tlog/Seconda Esercitazione.write.1u.tlog
+Seconda Esercitazione/Debug/camera.obj
+Seconda Esercitazione/Debug/cylinder.obj
+Seconda Esercitazione/Debug/instance.obj
+Seconda Esercitazione/Debug/libjpeg-9.dll
+Seconda Esercitazione/Debug/libpng16-16.dll
+Seconda Esercitazione/Debug/libtiff-5.dll
+Seconda Esercitazione/Debug/libwebp-7.dll
+Seconda Esercitazione/Debug/main.obj
+Seconda Esercitazione/Debug/matrix4D.obj
+Seconda Esercitazione/Debug/parallelCamera.obj
+Seconda Esercitazione/Debug/rayTracingShadow.obj
+Seconda Esercitazione/Debug/scene.obj
+Seconda Esercitazione/Debug/SDL2.dll
+Seconda Esercitazione/Debug/SDL2_image.dll
+Seconda Esercitazione/Debug/Seconda Esercitazione.exe
+Seconda Esercitazione/Debug/Seconda Esercitazione.exe.recipe
+Seconda Esercitazione/Debug/Seconda Esercitazione.ilk
+Seconda Esercitazione/Debug/Seconda Esercitazione.log
+Seconda Esercitazione/Debug/Seconda Esercitazione.pdb
+Seconda Esercitazione/Debug/Seconda Esercitazione.vcxproj.FileListAbsolute.txt
+Seconda Esercitazione/Debug/secondaEsercitazione.obj
+Seconda Esercitazione/Debug/Sphere.obj
+Seconda Esercitazione/Debug/utilityRayTracing.obj
+Seconda Esercitazione/Debug/utilitySDL.obj
+Seconda Esercitazione/Debug/vc142.idb
+Seconda Esercitazione/Debug/vc142.pdb
+Seconda Esercitazione/Debug/zlib1.dll
+Seconda Esercitazione/Debug/Seconda .cb594738.tlog/CL.command.1.tlog
+Seconda Esercitazione/Debug/Seconda .cb594738.tlog/CL.read.1.tlog
+Seconda Esercitazione/Debug/Seconda .cb594738.tlog/CL.write.1.tlog
+Seconda Esercitazione/Debug/Seconda .cb594738.tlog/link.command.1.tlog
+Seconda Esercitazione/Debug/Seconda .cb594738.tlog/link.read.1.tlog
+Seconda Esercitazione/Debug/Seconda .cb594738.tlog/link.write.1.tlog
+Seconda Esercitazione/Debug/Seconda .cb594738.tlog/Seconda Esercitazione.lastbuildstate
+Seconda Esercitazione/.vs/Seconda Esercitazione/v16/.suo
+Seconda Esercitazione/.vs/Seconda Esercitazione/v16/Browse.VC.db
+Seconda Esercitazione/.vs/Seconda Esercitazione/v16/Browse.VC.db-shm
+Seconda Esercitazione/.vs/Seconda Esercitazione/v16/Browse.VC.db-wal
+Seconda Esercitazione/.vs/Seconda Esercitazione/v16/Browse.VC.opendb
+Seconda Esercitazione/.vs/Seconda Esercitazione/v16/ipch/AutoPCH/120b09d27a8e1b72/MAIN.ipch
+Seconda Esercitazione/.vs/Seconda Esercitazione/v16/ipch/AutoPCH/1878328404a91132/UTILITYRAYTRACING.ipch
+Seconda Esercitazione/.vs/Seconda Esercitazione/v16/ipch/AutoPCH/1f5d47386ca4996c/SECONDAESERCITAZIONE.ipch
+Seconda Esercitazione/.vs/Seconda Esercitazione/v16/ipch/AutoPCH/2c3e9338576f5c90/AABB.ipch
+Seconda Esercitazione/.vs/Seconda Esercitazione/v16/ipch/AutoPCH/2cd7e07966ddff76/SECONDAESERCITAZIONE.ipch
+Seconda Esercitazione/.vs/Seconda Esercitazione/v16/ipch/AutoPCH/39747d89d6a3e93d/UTILITYRAYTRACING.ipch
+Seconda Esercitazione/.vs/Seconda Esercitazione/v16/ipch/AutoPCH/3a078e5fdc421064/CAMERA.ipch
+Seconda Esercitazione/.vs/Seconda Esercitazione/v16/ipch/AutoPCH/3adc605210a1c7db/UTILITYSDL.ipch
+Seconda Esercitazione/.vs/Seconda Esercitazione/v16/ipch/AutoPCH/4327be902475eb6c/UTILITYRAYTRACING.ipch
+Seconda Esercitazione/.vs/Seconda Esercitazione/v16/ipch/AutoPCH/5158c1ab112a632c/RAYTRACINGSHADOW.ipch
+Seconda Esercitazione/.vs/Seconda Esercitazione/v16/ipch/AutoPCH/618bb44c45cadc4c/DIRECTION_LIGHT.ipch
+Seconda Esercitazione/.vs/Seconda Esercitazione/v16/ipch/AutoPCH/6c970ebda2250449/INSTANCE.ipch
+Seconda Esercitazione/.vs/Seconda Esercitazione/v16/ipch/AutoPCH/7a27d103dd8b232c/TEXTURE.ipch
+Seconda Esercitazione/.vs/Seconda Esercitazione/v16/ipch/AutoPCH/82a5df22703d1a47/PARALLELCAMERA.ipch
+Seconda Esercitazione/.vs/Seconda Esercitazione/v16/ipch/AutoPCH/94fd18cfeb45792e/INSTANCE.ipch
+Seconda Esercitazione/.vs/Seconda Esercitazione/v16/ipch/AutoPCH/9bd678f9b4d3131c/RECORD.ipch
+Seconda Esercitazione/.vs/Seconda Esercitazione/v16/ipch/AutoPCH/a1efdf03c4a0b78c/SECONDAESERCITAZIONE.ipch
+Seconda Esercitazione/.vs/Seconda Esercitazione/v16/ipch/AutoPCH/aba519d155ef8455/AABB.ipch
+Seconda Esercitazione/.vs/Seconda Esercitazione/v16/ipch/AutoPCH/b87ec32756e1ec25/TEXTURE.ipch
+Seconda Esercitazione/.vs/Seconda Esercitazione/v16/ipch/AutoPCH/bd86aa8c3c15765/SECONDAESERCITAZIONE.ipch
+Seconda Esercitazione/.vs/Seconda Esercitazione/v16/ipch/AutoPCH/c58fbc0a5f1acf7b/BOX.ipch
+Seconda Esercitazione/.vs/Seconda Esercitazione/v16/ipch/AutoPCH/cc6c77a36aaec5fa/PARALLELCAMERA.ipch
+Seconda Esercitazione/.vs/Seconda Esercitazione/v16/ipch/AutoPCH/cf6be19440ce914e/TEXTURE.ipch
+Seconda Esercitazione/.vs/Seconda Esercitazione/v16/ipch/AutoPCH/d277ebe4dde33aa8/MESH.ipch
+Seconda Esercitazione/.vs/Seconda Esercitazione/v16/ipch/AutoPCH/d8c53cd32af0d8f7/MAIN.ipch
+Seconda Esercitazione/.vs/Seconda Esercitazione/v16/ipch/AutoPCH/dbb4840cfc7bdeff/MESH.ipch
+Seconda Esercitazione/.vs/Seconda Esercitazione/v16/ipch/AutoPCH/deaaf2f5ffd37294/CAMERA.ipch

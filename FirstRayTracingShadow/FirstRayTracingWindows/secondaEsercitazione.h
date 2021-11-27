@@ -5,5 +5,5 @@
 #include "object_list.h"
 #include "utilityRayTracing.h"
 
-void showRayTracingShadow();
+void showSecondaEsercitazione();
 

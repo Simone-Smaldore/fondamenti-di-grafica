@@ -33,6 +33,9 @@ public:
 
 	virtual bool hit_object(const ray& r, float tmin, float tmax, hit_record& rec);
 	virtual bool hit_shadow(const ray& r, float t_min, float t_max);
+
+//private:
+//	vector<vector<int>> findBlocksTouched(const ray& r, point3d& hit_point);
 };
 
 
@@ -115,6 +118,9 @@ bool mesh::load_mesh(const char* filename, const char* basepath = NULL, bool tri
 
 	cout << "MESH LOADED \n";
 	cout << "NUM FACES: " << num_faces << endl;
+	cout << "X_AABB MESH: {MIN: " << aabb_mesh.pmin.x << ", MAX: " << aabb_mesh.pmax.x << " }\n";
+	cout << "Y_AABB MESH: {MIN: " << aabb_mesh.pmin.y << ", MAX: " << aabb_mesh.pmax.y << " }\n";
+	cout << "Z_AABB MESH: {MIN: " << aabb_mesh.pmin.z << ", MAX: " << aabb_mesh.pmax.z << " }\n";
 
 	return true;
 }
@@ -159,11 +165,14 @@ bool triangle_intersection(const ray& r, float tmin, float tmax, hit_record& rec
 bool mesh::hit_object(const ray& ray, float t_min, float t_max, hit_record& rec) {
 	bool hit_anything = false;
 	hit_record temp_rec;
+	point3d hit_point = point3d(0,0,0);
 	float closest_so_far = t_max;
 	float u, v;
 
-	if (aabb_mesh.hit(ray, t_min, t_max) == false)
+	if (aabb_mesh.hit(ray, t_min, t_max, hit_point) == false)
 		return false;
+
+	//vector<vector<int>> blocks_touched = findBlocksTouched(ray, hit_point);
 
 	for (int i = 0; i < num_faces; i++)
 	{
@@ -196,3 +205,56 @@ bool mesh::hit_object(const ray& ray, float t_min, float t_max, hit_record& rec)
 bool mesh::hit_shadow(const ray& r, float t_min, float t_max) {
 	return false;
 }
+
+//vector<vector<int>> mesh::findBlocksTouched(const ray& r, point3d& hit_point) {
+//	vector<vector<int>> listBlocks;
+//
+//	float stepX = (aabb_mesh.pmax.x - aabb_mesh.pmin.x) / 10;
+//	float stepY = (aabb_mesh.pmax.y - aabb_mesh.pmin.y) / 10;
+//	float stepZ = (aabb_mesh.pmax.z - aabb_mesh.pmin.z) / 10;
+//
+//	int firstX = floor((hit_point.x - aabb_mesh.pmin.x) / stepX);
+//	int firstY = floor((hit_point.y - aabb_mesh.pmin.y) / stepX);
+//	int firstZ = floor((hit_point.z - aabb_mesh.pmin.z) / stepX);
+//
+//	listBlocks.push_back(vector<int>(3));
+//	listBlocks[listBlocks.size() - 1][0] = firstX;
+//	listBlocks[listBlocks.size() - 1][1] = firstY;
+//	listBlocks[listBlocks.size() - 1][2] = firstZ;
+//
+//	float nextX = (firstX + 1) * stepX;
+//	float nextY = (firstY + 1) * stepY;
+//	float nextZ = (firstZ + 1) * stepZ;
+//
+//	float l = r.d.x;
+//	float m = r.d.y;
+//	float n = r.d.z;
+//
+//	point3d nextXPass = point3d(nextX, (nextX - firstX) * m / l - firstY, (nextX - firstX) * n / l - firstZ);
+//	point3d nextYPass = point3d((nextY - firstY) * l / m - firstX, nextY, (nextY - firstY) * n / m - firstZ);
+//	point3d nextZPass = point3d((nextZ - firstZ) * l / n - firstX, (nextZ - firstZ) * m / n - firstY, nextZ);
+//
+//	float nextTx = r.t_at_point(nextXPass);
+//	float nextTy = r.t_at_point(nextYPass);
+//	float nextTz = r.t_at_point(nextZPass);
+//
+//	if (nextTx < nextTy) {
+//		if (nextTx < nextTz) {
+//
+//		}
+//		else {
+//
+//		}
+//	}
+//	else {
+//		if (nextTy < nextTz) {
+//
+//		}
+//		else {
+//
+//		}
+//	}
+//
+//
+//	return listBlocks;
+//}
