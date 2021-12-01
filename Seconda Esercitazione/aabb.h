@@ -11,7 +11,7 @@ public:
 	point3d min() const { return pmin; }
 	point3d max() const { return pmax; }
 
-	bool hit(const ray& r, float tmin, float tmax, point3d& hit_point) const {
+	bool hit(const ray& r, float tmin, float tmax) const {
 		for (int a = 0; a < 3; a++) {
 			float t0 = ffmin((pmin[a] - r.origin()[a]) / r.direction()[a],
 				(pmax[a] - r.origin()[a]) / r.direction()[a]);
@@ -22,7 +22,6 @@ public:
 			if (tmax <= tmin)
 				return false;
 		}
-		hit_point = r.point_at_parameter(tmin);
 		return true;
 	}
 

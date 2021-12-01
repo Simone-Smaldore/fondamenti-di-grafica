@@ -8,6 +8,7 @@
 #include "Object.h"
 #define TINYOBJLOADER_IMPLEMENTATION
 #include "tiny_obj_loader.h"
+//#include "color.h"
 
 using namespace std;
 
@@ -36,8 +37,6 @@ public:
 	virtual bool hit_object(const ray& r, float tmin, float tmax, hit_record& rec);
 	virtual bool hit_shadow(const ray& r, float t_min, float t_max);
 
-//private:
-//	vector<vector<int>> findBlocksTouched(const ray& r, point3d& hit_point);
 };
 
 
@@ -174,11 +173,10 @@ bool triangle_intersection(const ray& r, float tmin, float tmax, hit_record& rec
 bool mesh::hit_object(const ray& ray, float t_min, float t_max, hit_record& rec) {
 	bool hit_anything = false;
 	hit_record temp_rec;
-	point3d hit_point = point3d(0,0,0);
 	float closest_so_far = t_max;
 	float beta, gamma;
 
-	if (aabb_mesh.hit(ray, t_min, t_max, hit_point) == false)
+	if (aabb_mesh.hit(ray, t_min, t_max) == false)
 		return false;
 
 
@@ -210,19 +208,43 @@ bool mesh::hit_object(const ray& ray, float t_min, float t_max, hit_record& rec)
 			i1 = vertex_faces[2][3 * i + 1];
 			i2 = vertex_faces[2][3 * i + 2];
 
-			//point2D uv0 = textures[i0];
-			//point2D uv1 = textures[i1];
-			//point2D uv2 = textures[i2];
+			
+			if (textures.size() > 0) {
+				point2D uv0 = textures[i0];
+				point2D uv1 = textures[i1];
+				point2D uv2 = textures[i2];
 
-			//point2D uv = uv0 * bary.x + uv1 * bary.y + uv2 * bary.z;
-			//rec.u = uv.x;
-			//rec.v = uv.y;
+				point2D uv = uv0 * bary.x + uv1 * bary.y + uv2 * bary.z;
+				rec.u = uv.x;
+				rec.v = uv.y;
+			}
+
 		}
 	}
 	return hit_anything;
 }
 
 bool mesh::hit_shadow(const ray& r, float t_min, float t_max) {
+	hit_record temp_rec;
+	float closest_so_far = t_max;
+	float u, v;
+
+	if (aabb_mesh.hit(r, t_min, t_max) == false)
+		return false;
+
+	for (int i = 0; i < num_faces; i++)
+	{
+		int i0 = vertex_faces[0][3 * i + 0];
+		int i1 = vertex_faces[0][3 * i + 1];
+		int i2 = vertex_faces[0][3 * i + 2];
+
+		point3d v0 = vertices[i0];
+		point3d v1 = vertices[i1];
+		point3d v2 = vertices[i2];
+
+		if (triangle_intersection(r, t_min, closest_so_far, temp_rec, v0, v1, v2, u, v))
+			return true;
+	}
 	return false;
 }
 

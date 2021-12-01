@@ -38,18 +38,33 @@ void showSecondaEsercitazione() {
     color gray(0.7f, 0.7f, 0.7f);
     vec3 light_direction(1, 1, 0);
 
-    point3d light_position(-6.0f, 6.0f, 0.0f);
+    point3d light_position(0.0f, 6.0f, 5.0f);
     point_light* p_light = new point_light(light_position, gray, gray, gray);
     world.addLight(p_light);
 
     srand(3);
     color randColor(randZeroToOne(), randZeroToOne(), randZeroToOne());
 
+    material m = material(randColor, randColor, randColor, 0.4f);
+    constant_texture t = constant_texture(color(1.0f, 0.0f, 0.0f));
+    
+    randColor = color(randZeroToOne(), randZeroToOne(), randZeroToOne());
+    material sphere_m = material(randColor, randColor, randColor, 0.4f);
+    sphere_m.alpha = 0.4f;
+    constant_texture sphere_t = constant_texture(color(0.0f, 1.0f, 0.0f));
+    
+
+    checker_texture ct = checker_texture(&t, &sphere_t);
+    sphere_m.mat_texture = &ct;
+    m.mat_texture = &sphere_t;
+
 
     Object* model3d = new mesh("./models/bunny2.obj", "/models/");
     //Object* model3d = new mesh("./models/stage.obj", "/models/");
-    instance* mesh_ptr = new instance(model3d, new material(randColor, randColor, randColor, 4.0));
-    mesh_ptr->scale(20.4f, 20.4f, 20.4f);
+
+    instance* mesh_ptr = new instance(model3d, &m);
+    mesh_ptr->scale(27.4f, 27.4f, 27.4f);
+    //mesh_ptr->translate(2.4f, 3.4f, 0.4f);
     //mesh_ptr->rotate_y(45.0f);
     //mesh_ptr->translate(0.0f, -25.0f, -230.0f);
 
@@ -67,7 +82,8 @@ void showSecondaEsercitazione() {
 
     Object* sphere_model = new Sphere(point3d(0,0,0), 1.0f); 
     randColor = color(randZeroToOne(), randZeroToOne(), randZeroToOne());
-    instance* sphere_ptr = new instance(sphere_model, new material(randColor, randColor, randColor, 4.0));
+
+    instance* sphere_ptr = new instance(sphere_model, &sphere_m);
     sphere_ptr->scale(1000.0, 1000.0, 1000.0);
     sphere_ptr->translate(0, -1000, 0);
     world.addObject(sphere_ptr);
@@ -81,8 +97,8 @@ void showSecondaEsercitazione() {
 
 
 
-    //world.parallelRenderRandom(renderer, ns);
-    world.parallelRenderMultiJittered(renderer, 3);
+    world.parallelRenderRandom(renderer, ns);
+    //world.parallelRenderMultiJittered(renderer, 3);
 
     time_t current_time = time(NULL);
     cout << "Impiegati " << current_time - start_time << " secondi per il rendering";

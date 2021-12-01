@@ -21,7 +21,7 @@ class material {
 		color ks;
 		float alpha;
 
-		texture* texture;
+		texture* mat_texture;
 
 
 		material() {
@@ -50,6 +50,7 @@ class material {
 
 			alpha = 20 + randZeroToOne() * 200;
 		}
+
 
 		
 };

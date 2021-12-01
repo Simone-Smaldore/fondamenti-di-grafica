@@ -17,7 +17,8 @@ color phong_shading(light& light, hit_record& hr, camera& cam, vec3 light_direct
 
 	if (LDotN > 0) {
 		// TODO AGGIUNGERE L'ATTENUAZIONE QUADRATICA ?
-		diffuse = hr.m.kd * light.diffuse * LDotN;
+		//diffuse = hr.m.kd * light.diffuse * LDotN;
+		diffuse = hr.m.mat_texture->value(hr.u, hr.v, hr.p) * light.diffuse * LDotN;
 
 		vec3 R = reflect(L, hr.normal);
 

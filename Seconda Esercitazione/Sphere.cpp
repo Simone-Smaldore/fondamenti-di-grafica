@@ -48,8 +48,7 @@ bool Sphere::hit_shadow(const ray& ray, float t_min, float t_max) {
 string Sphere::toString() {
     stringstream ss;
     ss << "SPHERE CENTER = (" << ::toString(this->center) << ")" << endl
-        << "SHERE RADIUS = " << this->radius << endl
-        << "COLOR -> " << ::toString(this->color) << endl << ")";
+        << "SHERE RADIUS = " << this->radius <<  ")";
     string s = ss.str();
     return s;
 }
