@@ -36,69 +36,59 @@ void showSecondaEsercitazione() {
     scene world;
 
     color gray(0.7f, 0.7f, 0.7f);
+    color lightgray(0.75f, 0.75f, 0.75f);
+    color black(0.0f, 0.0f, 0.0f);
+    color black20(0.2f, 0.2f, 0.2f);
     vec3 light_direction(1, 1, 0);
-
-    point3d light_position(0.0f, 6.0f, 5.0f);
-    point_light* p_light = new point_light(light_position, gray, gray, gray);
-    world.addLight(p_light);
 
     srand(3);
     color randColor(randZeroToOne(), randZeroToOne(), randZeroToOne());
 
-    material m = material(randColor, randColor, randColor, 0.4f);
-    constant_texture t = constant_texture(color(1.0f, 0.0f, 0.0f));
     
-    randColor = color(randZeroToOne(), randZeroToOne(), randZeroToOne());
-    material sphere_m = material(randColor, randColor, randColor, 0.4f);
-    sphere_m.alpha = 0.4f;
-    constant_texture sphere_t = constant_texture(color(0.0f, 1.0f, 0.0f));
-    
+    point3d light_position(0.0f, 10.0f, 90.0f);
+    point_light* light = new point_light(light_position, black, lightgray, black);
+    world.addLight(light);
 
-    checker_texture ct = checker_texture(&t, &sphere_t);
-    sphere_m.mat_texture = &ct;
-    m.mat_texture = &sphere_t;
+    point3d lookfrom(0, 2, 10);
+    point3d lookat(0, 0, -1);
+    vec3 up(0, 1, 0);
+    world.setCamera(lookfrom, lookat, up, 20, image_width, image_height);
 
+    Object* model3d = new mesh("./models/cat.obj", "./models/");
+    texture* cat_texture = new image_texture("./models/texturecat.jpg");
+    //texture* earth_texture = new image_texture("./models/earth.jpg");
+    texture* earth_texture = new image_texture("./models/biliard.jpg");
+    //material* m = new material();
+    //m->alpha = 100000;
+    //m->mat_texture = cat_texture;
+    //m->ka = lightgray;
+    //m->ks = lightgray;
+    //instance* mesh_ptr = new instance(model3d, m);
 
-    Object* model3d = new mesh("./models/bunny2.obj", "/models/");
-    //Object* model3d = new mesh("./models/stage.obj", "/models/");
+    //mesh_ptr->scale(0.4, 0.4, 0.4);
+    //
+    //mesh_ptr->rotate_x(-90.0f);
+    //mesh_ptr->rotate_y(60.0f);
+    //mesh_ptr->translate(0.0f, -40.0f, -120.0f);
+    //world.addObject(mesh_ptr);
 
-    instance* mesh_ptr = new instance(model3d, &m);
-    mesh_ptr->scale(27.4f, 27.4f, 27.4f);
-    //mesh_ptr->translate(2.4f, 3.4f, 0.4f);
-    //mesh_ptr->rotate_y(45.0f);
-    //mesh_ptr->translate(0.0f, -25.0f, -230.0f);
-
-    world.addObject(mesh_ptr);
-
-    //point3d light_position(-6.0f, 6.0f, 0.0f);
-    //direction_light* d_light = new direction_light(normalize(light_direction), gray, gray, gray);
-    //world.addLight(d_light);
-
-    //light_position = point3d(-6.0f, 9.0f, 0.0f);
-    //spot_light* s_light = new spot_light(light_position, normalize(vec3(0,1,0)), 25.0, 2.7,gray, gray, gray);
-    //world.addLight(s_light);
-
-    world.setCamera(cameraPosition, cameraOrientation, upVector, fieldOfView, image_width, image_height);
-
-    Object* sphere_model = new Sphere(point3d(0,0,0), 1.0f); 
-    randColor = color(randZeroToOne(), randZeroToOne(), randZeroToOne());
-
-    instance* sphere_ptr = new instance(sphere_model, &sphere_m);
-    sphere_ptr->scale(1000.0, 1000.0, 1000.0);
-    sphere_ptr->translate(0, -1000, 0);
+    Object* sphere_model = new Sphere(point3d(0, 0, 0), 1.0f);
+    //Object* sphere_model = new cylinder(-1.0f, 1.0f, 1.0f);
+    material* sphere_m = new material();  
+    sphere_m->mat_texture = earth_texture;
+    sphere_m->ka = lightgray;
+    sphere_m->ks = lightgray;
+    instance* sphere_ptr = new instance(sphere_model, sphere_m);
+    //sphere_ptr->rotate_y(90);
+    sphere_ptr->translate(0,0,-10.0f);
+  
     world.addObject(sphere_ptr);
 
-    //Object* cylinder_model = new cylinder(1.0f, 3.0f, 1.0f);
-    //randColor = color(randZeroToOne(), randZeroToOne(), randZeroToOne());
-    //instance* cylinder_ptr = new instance(cylinder_model, new material(randColor, randColor, randColor, 4.0));
-    //cylinder_ptr->rotate_x(45);
-    //cylinder_ptr->translate(0, 1.0f, 0);
-    //world.addObject(cylinder_ptr);
 
 
-
-    world.parallelRenderRandom(renderer, ns);
+    //world.parallelRenderRandom(renderer, ns);
     //world.parallelRenderMultiJittered(renderer, 3);
+    world.renderRandom(renderer, ns);
 
     time_t current_time = time(NULL);
     cout << "Impiegati " << current_time - start_time << " secondi per il rendering";

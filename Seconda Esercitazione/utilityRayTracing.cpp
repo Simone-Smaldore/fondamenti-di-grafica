@@ -92,26 +92,26 @@ SDL_Surface* loadTexture(const char* image_path, int& imageWidth, int& imageHeig
 		return NULL;
 	}
 
-	color** data = new color * [image->h];
-	if (image->h) {
-		data[0] = new color[image->h * image->w];
-		for (int i = 1; i < image->h; i++)
-			data[i] = data[0] + i * image->w;
-	}
+	//color** data = new color * [image->h];
+	//if (image->h) {
+	//	data[0] = new color[image->h * image->w];
+	//	for (int i = 1; i < image->h; i++)
+	//		data[i] = data[0] + i * image->w;
+	//}
 
-	for (int x = 0; x < image->w; x++) {
-		for (int y = 0; y < image->h; y++) {
+	//for (int x = 0; x < image->w; x++) {
+	//	for (int y = 0; y < image->h; y++) {
 
-			Uint32 value = getpixel(image, x, y);
+	//		Uint32 value = getpixel(image, x, y);
 
-			float red = float((value >> 16) & 0xff) / 255.0f;
-			float green = float((value >> 8) & 0xff) / 255.0f;
-			float blue = float(value & 0xff) / 255.0f;
+	//		float red = float((value >> 16) & 0xff) / 255.0f;
+	//		float green = float((value >> 8) & 0xff) / 255.0f;
+	//		float blue = float(value & 0xff) / 255.0f;
 
-			data[x][y] = color(red, green, blue);
+	//		data[x][y] = color(red, green, blue);
 
-		}
-	}
+	//	}
+	//}
 
 	//SDL_FreeSurface(image);
 	return image;

@@ -28,6 +28,9 @@ bool cylinder::hit_object(const ray& ray, float t_min, float t_max, hit_record& 
 				rec.t = temp;
 				rec.normal = normalize(vec3((ox + temp * dx) * inv_radius, 0.0f, (oz + temp * dz) * inv_radius));
 				rec.p = ray.point_at_parameter(rec.t);
+				float azimuth = atan2(rec.p.z, rec.p.x);
+				rec.u = azimuth / (2 * M_PI);
+				rec.v = (rec.p.y + 1) / 2;
 				//rec.m = mat;
 
 				// test for hitting from inside
@@ -47,6 +50,9 @@ bool cylinder::hit_object(const ray& ray, float t_min, float t_max, hit_record& 
 				rec.t = temp;
 				rec.normal = normalize(vec3((ox + temp * dx) * inv_radius, 0.0f, (oz + temp * dz) * inv_radius));
 				rec.p = ray.point_at_parameter(rec.t);
+				float azimuth = atan2(rec.p.z, rec.p.x);
+				rec.u = azimuth / (2 * M_PI);
+				rec.v = (rec.p.y + 1) / 2;
 				//rec.m = mat;
 
 				// test for hitting inside surface

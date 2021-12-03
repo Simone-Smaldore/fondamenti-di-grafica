@@ -11,14 +11,28 @@ bool Sphere::hit_object(const ray& ray, float t_min, float t_max, hit_record& re
         if (temp < t_max && temp > t_min) {
             rec.t = temp;
             rec.p = ray.point_at_parameter(rec.t);
+            float phi = atan2(rec.p.z, rec.p.x);
+            float theta = asin(rec.p.y);
+            rec.u = 1 - (phi + M_PI) / (2 * M_PI);
+            rec.v = (theta + M_PI / 2) / M_PI;
             rec.normal = (rec.p - center) / radius;
+            //rec.u = rec.normal.x / 2 + 0.5;
+            //rec.v = rec.normal.y / 2 + 0.5;
+            //cout << "U: " << rec.u << " V: " << rec.v << endl;
             return true;
         }
         temp = (-b + sqrt(discriminant)) / a;
         if (temp < t_max && temp > t_min) {
             rec.t = temp;
             rec.p = ray.point_at_parameter(rec.t);
+            float phi = atan2(rec.p.z, rec.p.x);
+            float theta = asin(rec.p.y);
+            rec.u = 1 - (phi + M_PI) / (2 * M_PI);
+            rec.v = (theta + M_PI / 2) / M_PI;
             rec.normal = (rec.p - center) / radius;
+            //rec.u = rec.normal.x / 2 + 0.5;
+            //rec.v = rec.normal.y / 2 + 0.5;
+            //cout << "U: " << rec.u << " V: " << rec.v << endl;
             return true;
         }
     }
