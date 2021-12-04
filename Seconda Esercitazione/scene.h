@@ -31,6 +31,8 @@ class scene {
 
 		void parallelRenderMultiJittered(SDL_Renderer*& renderer, int nRockPerLayer);
 
+		void parallelRenderBlur(SDL_Renderer*& renderer, int ns);
+
 		void addObject(Object* new_object);
 
 		void addLight(light* new_light);

@@ -2,6 +2,7 @@
 #include "utilitySDL.h"
 #include "scene.h"
 #include "Sphere.h"
+#include "blurSphere.h"
 #include "cylinder.h"
 #include "instance.h"
 #include "spot_light.h"
@@ -49,7 +50,7 @@ void showSecondaEsercitazione() {
     point_light* light = new point_light(light_position, black, lightgray, black);
     world.addLight(light);
 
-    point3d lookfrom(0, 2, 10);
+    point3d lookfrom(0, 4, 13);
     point3d lookat(0, 0, -1);
     vec3 up(0, 1, 0);
     world.setCamera(lookfrom, lookat, up, 20, image_width, image_height);
@@ -72,7 +73,10 @@ void showSecondaEsercitazione() {
     //mesh_ptr->translate(0.0f, -40.0f, -120.0f);
     //world.addObject(mesh_ptr);
 
-    Object* sphere_model = new Sphere(point3d(0, 0, 0), 1.0f);
+
+
+    Object* sphere_model_f = new Sphere(point3d(0, 0, 0), 1.0f);
+    Object* sphere_model = new blurSphere(point3d(0, 0, 0), point3d(1.0f, 0, 0.0f), 0, 1.0f, 1.0f);
     //Object* sphere_model = new cylinder(-1.0f, 1.0f, 1.0f);
     material* sphere_m = new material();  
     sphere_m->mat_texture = earth_texture;
@@ -80,15 +84,25 @@ void showSecondaEsercitazione() {
     sphere_m->ks = lightgray;
     instance* sphere_ptr = new instance(sphere_model, sphere_m);
     //sphere_ptr->rotate_y(90);
-    sphere_ptr->translate(0,0,-10.0f);
+    //sphere_ptr->translate(-4.0f ,0,-10.0f);
   
     world.addObject(sphere_ptr);
+
+    material* floor_m = new material();
+    instance* sphere_floor = new instance(sphere_model_f, floor_m);
+    texture* floor_texture = new constant_texture(color(0,1.0f,0.0f));
+    floor_m->mat_texture = floor_texture;
+    floor_m->ka = lightgray;
+    floor_m->ks = lightgray;
+    sphere_floor->scale(1000.0, 1000.0, 1000.0);
+    sphere_floor->translate(0, -1005, 0);
+    world.addObject(sphere_floor);
 
 
 
     //world.parallelRenderRandom(renderer, ns);
     //world.parallelRenderMultiJittered(renderer, 3);
-    world.renderRandom(renderer, ns);
+    world.parallelRenderBlur(renderer, 300);
 
     time_t current_time = time(NULL);
     cout << "Impiegati " << current_time - start_time << " secondi per il rendering";
