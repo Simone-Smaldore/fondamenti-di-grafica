@@ -158,6 +158,7 @@
     <ClInclude Include="point2D.h" />
     <ClInclude Include="point3d.h" />
     <ClInclude Include="point_light.h" />
+    <ClInclude Include="quadrilateral.h" />
     <ClInclude Include="ray.h" />
     <ClInclude Include="record.h" />
     <ClInclude Include="scene.h" />
@@ -179,6 +180,7 @@
     <ClCompile Include="instance.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="matrix4D.cpp" />
+    <ClCompile Include="quadrilateral.cpp" />
     <ClCompile Include="scene.cpp" />
     <ClCompile Include="secondaEsercitazione.cpp" />
     <ClCompile Include="Sphere.cpp" />

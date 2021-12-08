@@ -198,20 +198,3 @@ bool scene::trace_ray(const ray& r, float t_min, float t_max, hit_record& rec) c
 }
 
 
-void scene::parallelRenderBlur(SDL_Renderer*& renderer, int ns) {
-	vector<color> matrix(nx * ny);
-	parallel_for(int(0), ny, [&](int j) {
-		for (int i = 0; i < nx; i++) {
-			color col(0.0, 0.0, 0.0);
-			for (int s = 0; s < ns; s++) {
-				ray r = cam->get_ray(float((i + randZeroToOne()) / nx), float((j + randZeroToOne()) / ny));
-				col += scene::shot(r);
-			}
-			col /= float(ns);
-			col = color(sqrt(col.r), sqrt(col.g), sqrt(col.b));
-			matrix[j * nx + i] = col;
-		}
-		});
-	updateRendererFromMatrix(ny, nx, renderer, matrix);
-}
-
