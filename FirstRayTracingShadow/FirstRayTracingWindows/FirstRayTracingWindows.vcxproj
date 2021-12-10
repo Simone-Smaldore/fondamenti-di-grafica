@@ -151,8 +151,8 @@
     <ClCompile Include="parallelCamera.cpp" />
     <ClCompile Include="plane.cpp" />
     <ClCompile Include="quadrilateral.cpp" />
-    <ClCompile Include="rayTracingShadow.cpp" />
     <ClCompile Include="scene.cpp" />
+    <ClCompile Include="secondaEsercitazione.cpp" />
     <ClCompile Include="Sphere.cpp" />
     <ClCompile Include="triangle.cpp" />
     <ClCompile Include="utilityRayTracing.cpp" />
@@ -183,9 +183,9 @@
     <ClInclude Include="point_light.h" />
     <ClInclude Include="quadrilateral.h" />
     <ClInclude Include="ray.h" />
-    <ClInclude Include="rayTracingShadow.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="scene.h" />
+    <ClInclude Include="secondaEsercitazione.h" />
     <ClInclude Include="shader.h" />
     <ClInclude Include="Sphere.h" />
     <ClInclude Include="spot_light.h" />

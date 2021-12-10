@@ -225,26 +225,26 @@ bool mesh::hit_object(const ray& ray, float t_min, float t_max, hit_record& rec)
 }
 
 bool mesh::hit_shadow(const ray& r, float t_min, float t_max) {
-	//hit_record temp_rec;
-	//float closest_so_far = t_max;
-	//float u, v;
+	hit_record temp_rec;
+	float closest_so_far = t_max;
+	float u, v;
 
-	//if (aabb_mesh.hit(r, t_min, t_max) == false)
-	//	return false;
+	if (aabb_mesh.hit(r, t_min, t_max) == false)
+		return false;
 
-	//for (int i = 0; i < num_faces; i++)
-	//{
-	//	int i0 = vertex_faces[0][3 * i + 0];
-	//	int i1 = vertex_faces[0][3 * i + 1];
-	//	int i2 = vertex_faces[0][3 * i + 2];
+	for (int i = 0; i < num_faces; i++)
+	{
+		int i0 = vertex_faces[0][3 * i + 0];
+		int i1 = vertex_faces[0][3 * i + 1];
+		int i2 = vertex_faces[0][3 * i + 2];
 
-	//	point3d v0 = vertices[i0];
-	//	point3d v1 = vertices[i1];
-	//	point3d v2 = vertices[i2];
+		point3d v0 = vertices[i0];
+		point3d v1 = vertices[i1];
+		point3d v2 = vertices[i2];
 
-	//	if (triangle_intersection(r, t_min, closest_so_far, temp_rec, v0, v1, v2, u, v))
-	//		return true;
-	//}
+		if (triangle_intersection(r, t_min, closest_so_far, temp_rec, v0, v1, v2, u, v))
+			return true;
+	}
 	return false;
 }
 
