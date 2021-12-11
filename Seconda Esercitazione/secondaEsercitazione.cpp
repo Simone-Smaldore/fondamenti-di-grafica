@@ -53,90 +53,108 @@ void showSecondaEsercitazione() {
     color randomColors[4] = { f_red, f_green, f_blue, f_yellow };
     int shufVec[4] = { 0,1,2,3 };
 
-    
-
     srand(2);
     color randColor(randZeroToOne(), randZeroToOne(), randZeroToOne());
-
-    //vec3 light_direction(1, 1, 0);
-    //point3d light_position(0.0f, 0.0f, 10.0f);
-    //point_light* light = new point_light(light_position, black20, lightgray, black20);
-    //world.addLight(light);
-
 
     point3d lookfrom(0, 4, 13);
     point3d lookat(0, 0, -1);
     vec3 up(0, 1, 0);
     world.setCamera(lookfrom, lookat, up, 20, image_width, image_height);
 
-    //Object* model3d = new mesh("./models/cat.obj", "./models/");
-    texture* cat_texture = new image_texture("./models/texturecat.jpg");
-    //texture* earth_texture = new image_texture("./models/earth.jpg");
-    
-    //material* m = new material();
-    //m->alpha = 100000;
-    //m->mat_texture = cat_texture;
-    //m->ka = lightgray;
-    //m->ks = lightgray;
-    //instance* mesh_ptr = new instance(model3d, m);
-
-    //mesh_ptr->scale(0.4, 0.4, 0.4);
-    //
-    //mesh_ptr->rotate_x(-90.0f);
-    //mesh_ptr->rotate_y(60.0f);
-    //mesh_ptr->translate(0.0f, -40.0f, -120.0f);
-    //world.addObject(mesh_ptr);
-
-
-    
-    Object* cylinder_model_f = new cylinder(-1.0f, 1.0f, 1.0f);
-
-  
-    //world.addObject(sphere_ptr);
-
-
-    // LIGHTS 
+    // ******* SPHERE *******
 
     vec3 light_direction(0, 1, 0);
-    point3d light_position(0.0f, 10.0f, 00.0f);
-    point_light* light = new point_light(light_position, black20, lightgray, black20);
+    point3d light_position(0.0f, 4.0f, 10.0f);
+    point_light* light = new point_light(light_position, black, gray, black);
     world.addLight(light);
 
     Object* sphere_model = new Sphere(point3d(0, 0, 0), 1.0f);
-    randColor = color(randZeroToOne(), randZeroToOne(), randZeroToOne());
-    texture* rand = new constant_texture(randColor);
-    material* m = new material();
-    m->mat_texture = rand;
-    m->ka = randColor;
-    m->ks = randColor;
-    instance* sphere_ptr = new instance(sphere_model, m);
-    sphere_ptr->scale(1000.0, 1000.0, 1000.0);
-    sphere_ptr->translate(0, -999.9, 0);
-    world.addObject(sphere_ptr);
+    texture* earth_texture = new image_texture("./models/earth.jpg");
 
-    for (int a = -11; a < 11; a++) {
-        for (int b = -11; b < 11; b++) {
-            point3d center(a + 0.9f * randZeroToOne(),
-                0.2f,
-                b + 0.9f * randZeroToOne());
-            randColor = color(randZeroToOne(), randZeroToOne(), randZeroToOne());
-            rand = new constant_texture(randColor);
-            m = new material();
-            m->mat_texture = rand;
-            m->ka = randColor;
-            m->ks = randColor;
-            sphere_ptr = new instance(sphere_model, m);
-            sphere_ptr->scale(0.1f, 0.2f, 0.1f);
-            sphere_ptr->translate(center.x, center.y, center.z);
-            world.addObject(sphere_ptr);
-        }
-    }
+    material* mat_sphere = new material();
+    mat_sphere->mat_texture = earth_texture;
+    mat_sphere->ka = lightgray;
+    mat_sphere->ks = lightgray;
+    instance* earth = new instance(sphere_model, mat_sphere);
+    //night->rotate_x(-5);
+
+    world.addObject(earth);
+
+    world.parallelRenderMultiJittered(renderer, 3);
 
 
-    world.parallelRenderMultiJittered(renderer, 1);
+    // ******* CYLINDER *******
+
+    //vec3 light_direction(0, 1, 0);
+    //point3d light_position(0.0f, 4.0f, 10.0f);
+    //point_light* light = new point_light(light_position, black, gray, black);
+    //world.addLight(light);
+
+    //Object* cylinder_model = new cylinder(-1.0f, 1.0f, 1.0f);
+    //texture* night_texture = new image_texture("./models/night.jpg");
+
+    //material* mat_cyl = new material();
+    //mat_cyl->mat_texture = night_texture;
+    //mat_cyl->ka = lightgray;
+    //mat_cyl->ks = lightgray;
+    //instance* night = new instance(cylinder_model, mat_cyl);
+    //night->rotate_x(-5);
+
+    //world.addObject(night);
+
+    //world.parallelRenderMultiJittered(renderer, 3);
+
+    // ******* LIGHTS *******
+
+    //vec3 light_direction(0, 1, 0);
+    //float theta = 20.0f;
+
+    //point3d light_position1(2.0f, 5.0f, 0.0f);
+    //point3d light_position2(-2.0f, 5.0f, 0.0f);
+    //point3d light_position3(0.0f, 5.0f, -4.0f);
+
+    //spot_light* light1 = new spot_light(light_position1, light_direction, theta, 1, black20, lightgray, black20);
+    //spot_light* light2 = new spot_light(light_position2, light_direction, theta, 1, black20, lightgray, black20);
+    //spot_light* light3 = new spot_light(light_position3, light_direction, theta, 1, black20, lightgray, black20);
+    //world.addLight(light1);
+    //world.addLight(light2);
+    //world.addLight(light3);
+
+    //Object* sphere_model = new Sphere(point3d(0, 0, 0), 1.0f);
+    //randColor = color(randZeroToOne(), randZeroToOne(), randZeroToOne());
+    //texture* rand = new constant_texture(randColor);
+    //material* m = new material();
+    //m->mat_texture = rand;
+    //m->ka = randColor;
+    //m->ks = randColor;
+    //instance* sphere_ptr = new instance(sphere_model, m);
+    //sphere_ptr->scale(1000.0, 1000.0, 1000.0);
+    //sphere_ptr->translate(0, -999.9, 0);
+    //world.addObject(sphere_ptr);
+
+    //for (int a = -11; a < 11; a++) {
+    //    for (int b = -11; b < 11; b++) {
+    //        point3d center(a + 0.9f * randZeroToOne(),
+    //            0.2f,
+    //            b + 0.9f * randZeroToOne());
+    //        randColor = color(randZeroToOne(), randZeroToOne(), randZeroToOne());
+    //        rand = new constant_texture(randColor);
+    //        m = new material();
+    //        m->mat_texture = rand;
+    //        m->ka = randColor;
+    //        m->ks = randColor;
+    //        sphere_ptr = new instance(sphere_model, m);
+    //        sphere_ptr->scale(0.1f, 0.2f, 0.1f);
+    //        sphere_ptr->translate(center.x, center.y, center.z);
+    //        world.addObject(sphere_ptr);
+    //    }
+    //}
 
 
-    // MOTION BLUR
+    //world.parallelRenderMultiJittered(renderer, 3);
+
+
+    // ******* MOTION BLUR *******
 
     //vec3 light_direction(1, 1, 0);
 
@@ -172,7 +190,7 @@ void showSecondaEsercitazione() {
 
     //world.parallelRenderRandom(renderer, 300);
 
-    // ANIMAZIONE
+    // ******* ANIMAZIONE *******
 
     //vec3 light_direction(1, 1, 0);
     //point3d light_position1(0.3f, 2.2f, -1.2f);
